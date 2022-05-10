@@ -1,0 +1,28 @@
+.sliderTrack {
+    position: relative;
+    top: 7px;
+    left: 12px;
+    right: 12px;
+    width: 200%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    transition: 0s ease-in;
+
+    
+    
+}
+.slider {
+    position: relative;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+    overflow-x: auto;
+}
+.slider::-webkit-scrollbar {
+    display: none;
+}

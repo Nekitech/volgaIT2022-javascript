@@ -1,0 +1,60 @@
+import React, { useState, useEffect, useContext } from 'react'
+import BetweenPage from '../betweenPage/BetweenPage'
+import classes from './Page31.module.css'
+import TitlePage from '../../components/UI/titlePage/TitlePage'
+import ButtonChoice from '../../components/UI/buttonChoice/ButtonChoice'
+import {Link} from 'react-router-dom'
+import ButtonSkip from '../../components/UI/buttonSkip/ButtonSkip'
+import {CounterContext, PageHistory} from '../../context'
+function Page31() {
+  const page = 'Page31'
+  let [isShow, setisShow] = useState(false)
+  let {pages, setPages} = useContext(PageHistory)
+  let {counter, setCounter} = useContext(CounterContext)
+  useEffect(() => {
+    const timerId = setTimeout(() => setisShow(!isShow), 3000)
+    return () => clearTimeout(timerId)
+  }, [])
+  
+  return (
+    <div>
+        {
+          (!isShow)
+          ? (<BetweenPage text={"Let's get to know you!"}/>)
+          :
+          (
+            <div className='page'>
+              <TitlePage text={'Do you need vision correction?'}/>
+              <Link to="/Page32">
+                <ButtonChoice onClick={() => {
+                  setPages(pages => [...pages, page])
+                  window.sessionStorage.setItem('counter', JSON.stringify(counter))
+                  window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
+                  }} name={"Yes"}/>
+              </Link>
+              <Link to="/Page41">
+                <ButtonChoice onClick={() => {
+                  setCounter(counter+=1)
+                  setPages(pages => [...pages, page])
+                  window.sessionStorage.setItem('counter', JSON.stringify(counter))
+                  window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
+                  }} name={"No"}/>
+              </Link>
+              <Link to="/Page41">
+                <ButtonSkip onClick={() => {
+                  setCounter(counter+=1)
+                  setPages(pages => [...pages, page])
+                  window.sessionStorage.setItem('counter', JSON.stringify(counter))
+                  window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
+                  }} text={"Skip"}/>
+              </Link>
+
+            </div>
+          )
+        }
+        
+    </div>
+  )
+}
+
+export default Page31

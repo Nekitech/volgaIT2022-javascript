@@ -1,0 +1,31 @@
+.end_page__title{
+    color: #2196F3;
+    text-align: center;
+    margin-top: 48px;
+    line-height: 31px;
+    font-size: 24px;
+    width: 314px;
+    height: 60px;
+}
+.end_page__text{
+    width: 344px;
+    height: 48px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    color: #3A4850;
+    margin-top: 22px;
+    margin-bottom: 29px;
+    
+}
+.end_page__textBottom {
+    width: 286px;
+    height: 28px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+
+    color: #5B6971;
+}
