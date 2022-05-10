@@ -26,7 +26,6 @@ function Page8(props) {
   }
   let button = useRef(null)
   window.addEventListener('click', (event) => {
-
     if (ans['selectGlass'] != undefined && event.target.hasAttribute('id')) {
       Array.from(event?.target?.childNodes[0]?.childNodes).forEach((el) => {
         if (el?.hasAttribute('id') && event.clientX > el?.getBoundingClientRect().x && event.clientX < (el?.getBoundingClientRect().x + el?.getBoundingClientRect().width)) {
@@ -34,7 +33,6 @@ function Page8(props) {
           let arrayAns = ans['selectGlass']
           if (checkElem(arrayAns, nameItem)) {
             ans['selectGlass'].push(nameItem)
-
             setAns(ans)
             el.classList.add('selected')
             button.current?.classList.add(classes.btnSelected)
@@ -46,9 +44,7 @@ function Page8(props) {
             if (ans['selectGlass'].length === 0) {
               button.current?.classList.remove(classes.btnSelected)
             }
-
           }
-
         }
       });
     }
@@ -92,8 +88,8 @@ function Page8(props) {
           setPages(pages => [...pages, page])
           window.sessionStorage.setItem('counter', JSON.stringify(counter))
           window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
-          
-          window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'shape': ans['selectGlass']})))
+
+          window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'shape': ans['selectGlass'].join(',') })))
         }} ref={button} style={{ marginTop: '14px', cursor: ' pointer' }} className={classes.btn}>Continue</button>
       </Link>
     </div>

@@ -9,128 +9,46 @@ function SunglassesPage() {
   let {ans, setAns} = useContext(UserAnswer)
   let {counter, setCounter} = useContext(CounterContext)
   let {pages, setPages} = useContext(PageHistory)
+  let choicePage = (ans['men'] === true && ans['women'] === false) 
+  ? 'Page6Men' 
+  : (ans['women'] === true && ans['men'] === false) 
+  ? 'Page6Women'
+  : (ans['women'] === true && ans['men'] === true)
+  ? 'Page6Both'
+  : null
+
+  function nextPage(value, choiceAns = false, count = false) {
+    if (count) {
+        setCounter(counter += 1)
+        window.sessionStorage.setItem('counter', JSON.stringify(counter))
+    }
+    setPages(pages => [...pages, page])
+    window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
+    if (choiceAns) {
+        setAns(ans => Object.assign({}, ans, value))
+        window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, value)))
+    }
+    }
   return (
     <div className='page'>
       <TitlePage text={"When you’re out and about, which shade of lenses do you prefer?"}/>
-      {
-      (ans['men'] === true && ans['women'] === false)
-      ?
-      (<div>
-        <Link to="/Page6Men">
+      <div>
+        <Link to={'/' + choicePage}>
           <ButtonWithIcon onClick={() => {
-                  setCounter(counter+=1)
-                  setPages(pages => [...pages, page])
-                  setAns(ans => Object.assign({}, ans, { 'shade': 'dark' }))
-                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'shade': 'dark' })))
-                  window.sessionStorage.setItem('counter', JSON.stringify(counter))
-                  window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
+                  nextPage({ 'shade': 'dark' }, true, true)
           }} style={{paddingLeft: '28px', marginBottom: '16px'}} url={'../images/blackLens.svg'} text={"Dark Shade"}/>
         </Link>
-        <Link to='/Page6Men'>
+        <Link to={'/' + choicePage}>
           <ButtonWithIcon onClick={() => {
-                  setCounter(counter+=1)
-                  setPages(pages => [...pages, page])
-                  setAns(ans => Object.assign({}, ans, { 'shade': 'light' }))
-                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'shade': 'light' })))
-                  window.sessionStorage.setItem('counter', JSON.stringify(counter))
-                  window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
+            nextPage({ 'shade': 'light' }, true, true)
           }} style={{paddingLeft: '28px', marginBottom: '16px'}} url={'../images/whiteLens.svg'} text={"Light Shade"}/>
         </Link>
-        <Link to='/Page6Men'>
+        <Link to={'/' + choicePage}>
           <ButtonWithIcon onClick={() => {
-                  setCounter(counter+=1)
-                  setPages(pages => [...pages, page])
-                  setAns(ans => Object.assign({}, ans, { 'shade': 'light' }))
-                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'shade': 'transition' })))
-                  window.sessionStorage.setItem('counter', JSON.stringify(counter))
-                  window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
+            nextPage({ 'shade': 'transition' }, true, true)
           }} url={'../images/photochromic.svg'} text={"Transitioning Shade"}/>
         </Link>
       </div>
-        
-      )
-      : (null)
-      
-    }
-    { (ans['women'] === true && ans['men'] === false)
-    ?
-      (
-        <div>
-          <Link to='/Page6Women'>
-            <ButtonWithIcon onClick={() => {
-                  setCounter(counter+=1)
-                  setPages(pages => [...pages, page])
-                  setAns(ans => Object.assign({}, ans, { 'shade': 'dark' }))
-                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'shade': 'dark' })))
-                  window.sessionStorage.setItem('counter', JSON.stringify(counter))
-                  window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
-          }} style={{paddingLeft: '28px', marginBottom: '16px'}} url={'../images/blackLens.svg'} text={"Dark Shade"}/>
-          </Link>
-          <Link to='/Page6Women'>
-            <ButtonWithIcon onClick={() => {
-                  setCounter(counter+=1)
-                  setPages(pages => [...pages, page])
-                  setAns(ans => Object.assign({}, ans, { 'shade': 'light' }))
-                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'shade': 'light' })))
-                  window.sessionStorage.setItem('counter', JSON.stringify(counter))
-                  window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
-          }} style={{paddingLeft: '28px', marginBottom: '16px'}} url={'../images/whiteLens.svg'} text={"Light Shade"}/>
-          </Link>
-          <Link to='/Page6Women'>
-            <ButtonWithIcon onClick={() => {
-                  setCounter(counter+=1)
-                  setPages(pages => [...pages, page])
-                  setAns(ans => Object.assign({}, ans, { 'shade': 'light' }))
-                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'shade': 'transition' })))
-                  window.sessionStorage.setItem('counter', JSON.stringify(counter))
-                  window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
-          }} url={'../images/photochromic.svg'} text={"Transitioning Shade"}/>
-          </Link>
-        </div>
-      )
-      :
-      (null)
-    }
-    { (ans['women'] === true && ans['men'] === true)
-    ?
-      (
-        <div>
-          <Link to='/Page6Both'>
-            <ButtonWithIcon onClick={() => {
-                  setCounter(counter+=1)
-                  setPages(pages => [...pages, page])
-                  setAns(ans => Object.assign({}, ans, { 'shade': 'dark' }))
-                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'shade': 'dark' })))
-                  window.sessionStorage.setItem('counter', JSON.stringify(counter))
-                  window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
-          }} style={{paddingLeft: '28px', marginBottom: '16px'}} url={'../images/blackLens.svg'} text={"Dark Shade"}/>
-          </Link>
-          <Link to='/Page6Both'>
-            <ButtonWithIcon onClick={() => {
-                  setCounter(counter+=1)
-                  setPages(pages => [...pages, page])
-                  setAns(ans => Object.assign({}, ans, { 'shade': 'light' }))
-                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'shade': 'light' })))
-                  window.sessionStorage.setItem('counter', JSON.stringify(counter))
-                  window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
-          }} style={{paddingLeft: '28px', marginBottom: '16px'}} url={'../images/whiteLens.svg'} text={"Light Shade"}/>
-          </Link>
-          <Link to='/Page6Both'>
-            <ButtonWithIcon onClick={() => {
-                  setCounter(counter+=1)
-                  setPages(pages => [...pages, page])
-                  setAns(ans => Object.assign({}, ans, { 'shade': 'light' }))
-                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'shade': 'transition' })))
-                  window.sessionStorage.setItem('counter', JSON.stringify(counter))
-                  window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
-          }} url={'../images/photochromic.svg'} text={"Transitioning Shade"}/>
-          </Link>
-          
-        </div>
-      )
-      :
-      (null)
-    }  
     </div>
   )
 }

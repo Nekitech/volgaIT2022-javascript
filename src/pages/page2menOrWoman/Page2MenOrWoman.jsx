@@ -10,39 +10,32 @@ function Page2MenOrWoman() {
   let {pages, setPages} = useContext(PageHistory)
   let {counter, setCounter} = useContext(CounterContext)
   let {ans, setAns} = useContext(UserAnswer)
+  function nextPage(value) {
+    setCounter(counter+=1)
+    setPages(pages => [...pages, page])
+    setAns(ans => Object.assign({}, ans, value))
+    window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, value)))
+    window.sessionStorage.setItem('counter', JSON.stringify(counter))
+    window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
+  }
   return (
     <div className='page'>
         <TitlePage text={'What type of glasses are you looking for?'}/>
         <Link to='/Page31'>
             <ButtonChoice onClick={() => {
-              setCounter(counter+=1)
-              setPages(pages => [...pages, page])
-              setAns(ans => Object.assign({}, ans, {'eyeglasses': true, 'eyewear_type': 210}))
-              window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'eyeglasses': true, 'eyewear_type': 210})))
-              window.sessionStorage.setItem('counter', JSON.stringify(counter))
-              window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
+              nextPage({'eyeglasses': true, 'eyewear_type': 210})
               }} url="../images/eyeglasses.svg" name={"Eyeglasses"}/>
         </Link>
 
         <Link to='/Page31'>
         <ButtonChoice onClick={() => {
-          setCounter(counter+=1)
-          setPages(pages => [...pages, page])
-          setAns(ans => Object.assign({}, ans, {'sunglasses': true, 'eyewear_type': 211}))
-          window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'sunglasses': true, 'eyewear_type': 211})))
-          window.sessionStorage.setItem('counter', JSON.stringify(counter))
-          window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
+          nextPage({'sunglasses': true, 'eyewear_type': 211})
         }} url="../images/sunglasses.svg" name={"Sunglasses"}/>
         </Link>
 
         <Link to='/Page31'>
             <ButtonSkip onClick={() => {
-              setCounter(counter+=1)
-              setPages(pages => [...pages, page])
-              setAns(ans => Object.assign({}, ans, {'sunglasses': true, 'eyeglasses': true}))
-              window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'sunglasses': true, 'eyeglasses': true})))
-              window.sessionStorage.setItem('counter', JSON.stringify(counter))
-              window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
+              nextPage({'sunglasses': true, 'eyeglasses': true})
               }} text={'I want to see both'}/>
         </Link>
     </div>

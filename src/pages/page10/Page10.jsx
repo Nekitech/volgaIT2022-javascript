@@ -82,8 +82,6 @@ function Page10() {
                 <SliderItem url={"../images/coach.svg"} id="item" name='coach' />
                 <SliderItem url={"../images/toryBurch.svg"} id="item" name='tory_burch' />
                 <SliderItem url={"../images/burberry.svg"} id="item" name='burberry' />
-
-
             </Slider>
             <Link to="/Page11">
                 <button onClick={() => {
@@ -91,7 +89,7 @@ function Page10() {
                     setPages(pages => [...pages, page])
                     window.sessionStorage.setItem('counter', JSON.stringify(counter))
                     window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
-                    window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'brand': ans['selectBrand']})))
+                    window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'brand': ans['selectBrand'].join(',')})))
                 }} ref={button} style={{ marginTop: '14px', cursor: ' pointer' }} className={classes.btn}>Continue</button>
             </Link>
         </div>
