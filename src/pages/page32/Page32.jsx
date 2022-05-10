@@ -4,13 +4,12 @@ import ButtonChoice from '../../components/UI/buttonChoice/ButtonChoice'
 import ButtonSkip from '../../components/UI/buttonSkip/ButtonSkip'
 import { CounterContext, PageHistory, UserAnswer } from '../../context'
 import { Link } from 'react-router-dom'
-import classes from './Page32.module.css'
 function Page32() {
   const page = 'Page32'
   let { pages, setPages } = useContext(PageHistory)
   let { counter, setCounter } = useContext(CounterContext)
   let { ans, setAns } = useContext(UserAnswer)
-  
+
   function nextPage(value, choiceAns = false) {
     setCounter(counter += 1)
     setPages(pages => [...pages, page])

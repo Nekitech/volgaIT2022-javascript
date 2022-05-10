@@ -26,7 +26,7 @@ function Page10() {
     }
     let button = useRef(null)
     window.addEventListener('click', (event) => {
-        if (ans['selectBrand'] != undefined && event.target.hasAttribute('id')) {
+        if (ans['selectBrand'] !== undefined && event.target.hasAttribute('id')) {
             Array.from(event?.target?.childNodes[0]?.childNodes).forEach((el) => {
                 if (el?.hasAttribute('id') && event.clientX > el?.getBoundingClientRect().x && event.clientX < (el?.getBoundingClientRect().x + el?.getBoundingClientRect().width)) {
                     let nameItem = el.getAttribute('name')
@@ -45,9 +45,7 @@ function Page10() {
                         if (ans['selectBrand'].length === 0) {
                             button.current?.classList.remove(classes.btnSelected)
                         }
-
                     }
-
                 }
             });
         }

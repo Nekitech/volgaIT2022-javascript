@@ -2,7 +2,6 @@ import React, {useContext} from 'react'
 import TitlePage from '../../components/UI/titlePage/TitlePage'
 import ButtonChoice from '../../components/UI/buttonChoice/ButtonChoice'
 import ButtonSkip from '../../components/UI/buttonSkip/ButtonSkip'
-import classes from './Page2MenOrWoman.module.css'
 import {Link} from 'react-router-dom'
 import {CounterContext, PageHistory, UserAnswer} from '../../context'
 function Page2MenOrWoman() {

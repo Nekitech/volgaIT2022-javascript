@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import classes from './Page1.module.css'
 import ButtonChoice from '../../components/UI/buttonChoice/ButtonChoice'
 import ButtonSkip from '../../components/UI/buttonSkip/ButtonSkip'
 import '../../styles/App.css'

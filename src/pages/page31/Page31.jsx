@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
 import BetweenPage from '../betweenPage/BetweenPage'
-import classes from './Page31.module.css'
 import TitlePage from '../../components/UI/titlePage/TitlePage'
 import ButtonChoice from '../../components/UI/buttonChoice/ButtonChoice'
 import { Link } from 'react-router-dom'

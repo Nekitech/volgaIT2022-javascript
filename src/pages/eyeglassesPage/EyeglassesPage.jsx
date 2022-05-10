@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import classes from './EyeglassesPage.module.css'
 import TitlePage from '../../components/UI/titlePage/TitlePage'
 import ButtonChoice from '../../components/UI/buttonChoice/ButtonChoice'
 import { UserAnswer, CounterContext, PageHistory } from '../../context'

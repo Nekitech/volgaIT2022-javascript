@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import TitlePage from '../../components/UI/titlePage/TitlePage'
-import classes from './Page41.module.css'
 import ChoiceSizeButton from '../../components/UI/choiceSizeButton/ChoiceSizeButton'
 import { Link } from 'react-router-dom'
 import ButtonSkip from '../../components/UI/buttonSkip/ButtonSkip'

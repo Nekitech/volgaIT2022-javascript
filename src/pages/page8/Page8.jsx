@@ -26,7 +26,7 @@ function Page8(props) {
   }
   let button = useRef(null)
   window.addEventListener('click', (event) => {
-    if (ans['selectGlass'] != undefined && event.target.hasAttribute('id')) {
+    if (ans['selectGlass'] !== undefined && event.target.hasAttribute('id')) {
       Array.from(event?.target?.childNodes[0]?.childNodes).forEach((el) => {
         if (el?.hasAttribute('id') && event.clientX > el?.getBoundingClientRect().x && event.clientX < (el?.getBoundingClientRect().x + el?.getBoundingClientRect().width)) {
           let nameItem = el.getAttribute('name')
