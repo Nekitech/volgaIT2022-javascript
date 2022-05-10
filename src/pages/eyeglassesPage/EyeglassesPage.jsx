@@ -6,7 +6,7 @@ import { UserAnswer, CounterContext, PageHistory } from '../../context'
 import {Link} from 'react-router-dom'
 function EyeglassesPage() {
   const page = 'EyeglassesPage'
-  let {ans} = useContext(UserAnswer)
+  let {ans, setAns} = useContext(UserAnswer)
   let {counter, setCounter} = useContext(CounterContext)
   let {pages, setPages} = useContext(PageHistory)
   return (
@@ -21,6 +21,8 @@ function EyeglassesPage() {
           <Link onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, { 'blue_light': true }))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'blue_light': true })))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
           }} to="/Page6Men">
@@ -29,6 +31,8 @@ function EyeglassesPage() {
          <Link onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, { 'blue_light': false }))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'blue_light': false })))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
           }} to="/Page6Men">

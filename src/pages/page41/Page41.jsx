@@ -10,7 +10,7 @@ function Page41() {
   const page = 'Page41'
   let {counter, setCounter} = useContext(CounterContext)
   let {pages, setPages} = useContext(PageHistory)
-  let {ans} = useContext(UserAnswer)
+  let {ans, setAns} = useContext(UserAnswer)
   return (
     <div className='page'>
       <TitlePage style={{marginBottom: '38px'}} text={"What's your current frame size?"}/>
@@ -25,6 +25,8 @@ function Page41() {
               <ChoiceSizeButton onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, {'frame_size': 68}))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'frame_size': 68})))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
           }} text={'Small'} size={'42-48 mm'}/>
@@ -33,6 +35,8 @@ function Page41() {
               <ChoiceSizeButton onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, {'frame_size': 67}))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'frame_size': 67})))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
           }} text={'Medium'} size={'49-53 mm'}/>
@@ -41,6 +45,8 @@ function Page41() {
               <ChoiceSizeButton onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, {'frame_size': 66}))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'frame_size': 66})))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
           }} text={'Large'} size={'54-58 mm'}/>
@@ -54,6 +60,8 @@ function Page41() {
               <ChoiceSizeButton onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, {'frame_size': 68}))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'frame_size': 68})))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
           }} text={'Small'} size={'42-48 mm'}/>
@@ -62,6 +70,8 @@ function Page41() {
               <ChoiceSizeButton onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, {'frame_size': 67}))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'frame_size': 67})))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
           }} text={'Medium'} size={'49-53 mm'}/>
@@ -70,6 +80,8 @@ function Page41() {
               <ChoiceSizeButton onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, {'frame_size': 66}))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'frame_size': 66})))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
           }} text={'Large'} size={'54-58 mm'}/>
@@ -77,7 +89,7 @@ function Page41() {
           </div>
         )
       }
-
+      
       <Link to='/Page42'>
         <ButtonSkip onClick={() => {
             setPages(pages => [...pages, page])

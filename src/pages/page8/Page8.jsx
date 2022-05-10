@@ -30,7 +30,7 @@ function Page8(props) {
     if (ans['selectGlass'] != undefined && event.target.hasAttribute('id')) {
       Array.from(event?.target?.childNodes[0]?.childNodes).forEach((el) => {
         if (el?.hasAttribute('id') && event.clientX > el?.getBoundingClientRect().x && event.clientX < (el?.getBoundingClientRect().x + el?.getBoundingClientRect().width)) {
-          let nameItem = el.textContent
+          let nameItem = el.getAttribute('name')
           let arrayAns = ans['selectGlass']
           if (checkElem(arrayAns, nameItem)) {
             ans['selectGlass'].push(nameItem)
@@ -65,24 +65,24 @@ function Page8(props) {
       }}>You can pick more than one.</h4>
 
       <Slider>
-        <SliderItem url={"../images/rectangle.svg"} text={"Rectangle"} id="item" />
-        <SliderItem url={"../images/browline.svg"} text={"Browline"} id="item" />
-        <SliderItem url={"../images/aviator.svg"} text={"Aviator"} id="item" />
-        <SliderItem url={"../images/geometric.svg"} text={"Geometric"} id="item" />
+        <SliderItem url={"../images/rectangle.svg"} text={"Rectangle"} name="rectangle" id="item" />
+        <SliderItem url={"../images/browline.svg"} text={"Browline"} name="browline" id="item" />
+        <SliderItem url={"../images/aviator.svg"} text={"Aviator"} name="aviator" id="item" />
+        <SliderItem url={"../images/geometric.svg"} text={"Geometric"} name="geometric" id="item" />
 
       </Slider>
       <Slider>
-        <SliderItem url={"../images/wayframe.svg"} text={"Wayframe"} id="item" />
-        <SliderItem url={"../images/round.svg"} text={"Round"} id="item" />
-        <SliderItem url={"../images/oval.svg"} text={"Oval"} id="item" />
-        <SliderItem url={"../images/oversized.svg"} text={"Oversized"} id="item" />
+        <SliderItem url={"../images/wayframe.svg"} text={"Wayframe"} name="wayframe" id="item" />
+        <SliderItem url={"../images/round.svg"} text={"Round"} name="round" id="item" />
+        <SliderItem url={"../images/oval.svg"} text={"Oval"} name="oval" id="item" />
+        <SliderItem url={"../images/oversized.svg"} text={"Oversized"} name="oversized" id="item" />
 
       </Slider>
       <Slider>
-        <SliderItem url={"../images/catEye.svg"} text={"Cat Eye"} id="item" />
-        <SliderItem url={"../images/rimless.svg"} text={"Rimless"} id="item" />
-        <SliderItem url={"../images/square.svg"} text={"Square"} id="item" />
-        <SliderItem url={"../images/wrap.svg"} text={"Wrap"} id="item" />
+        <SliderItem url={"../images/catEye.svg"} text={"Cat Eye"} name="cat_eye" id="item" />
+        <SliderItem url={"../images/rimless.svg"} text={"Rimless"} name="rimless" id="item" />
+        <SliderItem url={"../images/square.svg"} text={"Square"} name="square" id="item" />
+        <SliderItem url={"../images/wrap.svg"} text={"Wrap"} name="wrap" id="item" />
 
 
       </Slider>
@@ -92,11 +92,10 @@ function Page8(props) {
           setPages(pages => [...pages, page])
           window.sessionStorage.setItem('counter', JSON.stringify(counter))
           window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
-          window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'selectGlass': ans['selectGlass']})))
+          
+          window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'shape': ans['selectGlass']})))
         }} ref={button} style={{ marginTop: '14px', cursor: ' pointer' }} className={classes.btn}>Continue</button>
       </Link>
-
-
     </div>
   )
 }

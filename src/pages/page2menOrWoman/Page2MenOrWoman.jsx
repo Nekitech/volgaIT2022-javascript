@@ -17,8 +17,8 @@ function Page2MenOrWoman() {
             <ButtonChoice onClick={() => {
               setCounter(counter+=1)
               setPages(pages => [...pages, page])
-              setAns(ans => Object.assign({}, ans, {'eyeglasses': true}))
-              window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'eyeglasses': true})))
+              setAns(ans => Object.assign({}, ans, {'eyeglasses': true, 'eyewear_type': 210}))
+              window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'eyeglasses': true, 'eyewear_type': 210})))
               window.sessionStorage.setItem('counter', JSON.stringify(counter))
               window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
               }} url="../images/eyeglasses.svg" name={"Eyeglasses"}/>
@@ -28,8 +28,8 @@ function Page2MenOrWoman() {
         <ButtonChoice onClick={() => {
           setCounter(counter+=1)
           setPages(pages => [...pages, page])
-          setAns(ans => Object.assign({}, ans, {'sunglasses': true}))
-          window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'sunglasses': true})))
+          setAns(ans => Object.assign({}, ans, {'sunglasses': true, 'eyewear_type': 211}))
+          window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'sunglasses': true, 'eyewear_type': 211})))
           window.sessionStorage.setItem('counter', JSON.stringify(counter))
           window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
         }} url="../images/sunglasses.svg" name={"Sunglasses"}/>

@@ -10,7 +10,7 @@ function Page42() {
     const page = 'Page42'
     let [isShow, setisShow] = useState(false)
     let { counter, setCounter } = useContext(CounterContext)
-    let { ans } = useContext(UserAnswer)
+    let { ans, setAns } = useContext(UserAnswer)
     let { pages, setPages } = useContext(PageHistory)
     useEffect(() => {
         const timerId = setTimeout(() => setisShow(!isShow), 3000)
@@ -34,6 +34,8 @@ function Page42() {
                                             <ButtonChoice onClick={() => {
                                                 setCounter(counter += 1)
                                                 setPages(pages => [...pages, page])
+                                                setAns(ans => Object.assign({}, ans, { 'frame_size': 66 }))
+                                                window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'frame_size': 66 })))
                                                 window.sessionStorage.setItem('counter', JSON.stringify(counter))
                                                 window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
                                             }} style={{ height: '84px', marginBottom: '11px' }} name={'Wider Than Average'} />
@@ -42,6 +44,8 @@ function Page42() {
                                             <ButtonChoice onClick={() => {
                                                 setCounter(counter += 1)
                                                 setPages(pages => [...pages, page])
+                                                setAns(ans => Object.assign({}, ans, { 'frame_size': 67 }))
+                                                window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'frame_size': 67 })))
                                                 window.sessionStorage.setItem('counter', JSON.stringify(counter))
                                                 window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
                                             }} style={{ height: '84px', marginBottom: '11px' }} name={'Average'} />
@@ -50,6 +54,8 @@ function Page42() {
                                             <ButtonChoice onClick={() => {
                                                 setCounter(counter += 1)
                                                 setPages(pages => [...pages, page])
+                                                setAns(ans => Object.assign({}, ans, { 'frame_size': 68 }))
+                                                window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'frame_size': 68 })))
                                                 window.sessionStorage.setItem('counter', JSON.stringify(counter))
                                                 window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
                                             }} style={{ height: '84px', marginBottom: '11px' }} name={'Narrower Than Average'} />
@@ -72,6 +78,8 @@ function Page42() {
                                                 <ButtonChoice onClick={() => {
                                                     setCounter(counter += 1)
                                                     setPages(pages => [...pages, page])
+                                                    setAns(ans => Object.assign({}, ans, { 'frame_size': 66 }))
+                                                    window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'frame_size': 66 })))
                                                     window.sessionStorage.setItem('counter', JSON.stringify(counter))
                                                     window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
                                                 }} style={{ height: '84px', marginBottom: '11px' }} name={'Wider Than Average'} />
@@ -80,6 +88,8 @@ function Page42() {
                                                 <ButtonChoice onClick={() => {
                                                     setCounter(counter += 1)
                                                     setPages(pages => [...pages, page])
+                                                    setAns(ans => Object.assign({}, ans, { 'frame_size': 67 }))
+                                                    window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'frame_size': 67 })))
                                                     window.sessionStorage.setItem('counter', JSON.stringify(counter))
                                                     window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
                                                 }} style={{ height: '84px', marginBottom: '11px' }} name={'Average'} />
@@ -88,6 +98,8 @@ function Page42() {
                                                 <ButtonChoice onClick={() => {
                                                     setCounter(counter += 1)
                                                     setPages(pages => [...pages, page])
+                                                    setAns(ans => Object.assign({}, ans, { 'frame_size': 68 }))
+                                                    window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'frame_size': 68 })))
                                                     window.sessionStorage.setItem('counter', JSON.stringify(counter))
                                                     window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
                                                 }} style={{ height: '84px', marginBottom: '11px' }} name={'Narrower Than Average'} />

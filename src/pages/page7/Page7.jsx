@@ -3,10 +3,11 @@ import TitlePage from '../../components/UI/titlePage/TitlePage'
 import ButtonChoice from '../../components/UI/buttonChoice/ButtonChoice'
 import ButtonSkip from '../../components/UI/buttonSkip/ButtonSkip'
 import {Link} from 'react-router-dom'
-import { CounterContext, PageHistory } from '../../context'
+import { CounterContext, PageHistory, UserAnswer } from '../../context'
 
 function Page7() {
     const page = 'Page7'
+    let {ans, setAns} = useContext(UserAnswer)
     let {pages, setPages} = useContext(PageHistory)
     let {counter, setCounter} = useContext(CounterContext)
   return (
@@ -16,6 +17,8 @@ function Page7() {
             <ButtonChoice onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, { 'facial_features': 'sharp' }))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'facial_features': 'sharp' })))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
                   }}  style={{width:'314px', height: '97px'}} name={"Sharp"}/>
@@ -24,6 +27,8 @@ function Page7() {
             <ButtonChoice onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, { 'facial_features': 'rounded' }))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'facial_features': 'rounded' })))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
                   }}  style={{width:'314px', height: '97px'}}  name={"Rounded"}/>
@@ -32,6 +37,8 @@ function Page7() {
             <ButtonChoice onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, { 'facial_features': 'between' }))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, { 'facial_features': 'between' })))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
                   }}  style={{width:'314px', height: '97px'}}  name={"In between"}/>

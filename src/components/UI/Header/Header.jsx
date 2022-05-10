@@ -32,9 +32,19 @@ const Header = (props) => {
       'eyeglasses': false,
       'sunglasses': false,
       'selectGlass': [],
-      'selectBrand': []
+      'selectBrand': [],
+      'gender': 0,
+      'eyewear_type': 0,
+      'lenstype': 0,
+      'frame_size': 0,
+      'blue_light': null,
+      'shade': '',
+      'face_shape': '',
+      'facial_features': '',
+      'shape': '',
+      'brand': ''
     })))
-    
+
   }
   return (
     <div className={classes.header}>

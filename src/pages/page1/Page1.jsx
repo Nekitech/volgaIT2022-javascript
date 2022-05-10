@@ -19,8 +19,8 @@ const Page1 = () => {
           <ButtonChoice onClick={() => {
             setPages(pages => [...pages, page])
             setCounter(counter+=1)
-            setAns(ans => Object.assign({}, ans, {'women': true}))
-            window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'women': true})))
+            setAns(ans => Object.assign({}, ans, {'women': true, 'gender': 5}))
+            window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'women': true, 'gender': 5})))
             window.sessionStorage.setItem('counter', JSON.stringify(counter))
             window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
             }} url="../images/women style.svg" name={"Women Style"}/>
@@ -30,8 +30,8 @@ const Page1 = () => {
           <ButtonChoice onClick={() => {
             setPages(pages => [...pages, page])
             setCounter(counter+=1)
-            setAns(ans => Object.assign({}, ans, {'men': true}))
-            window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'men': true})))
+            setAns(ans => Object.assign({}, ans, {'men': true, 'gender': 4}))
+            window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'men': true, 'gender': 4})))
             window.sessionStorage.setItem('counter', JSON.stringify(counter))
             window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
             }} url="../images/men style.svg" name={"Men Style"}/>

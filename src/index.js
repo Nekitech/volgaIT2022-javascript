@@ -13,7 +13,18 @@ function Main(){
     'eyeglasses': false,
     'sunglasses': false,
     'selectGlass': [],
-    'selectBrand': []
+    'selectBrand': [],
+    'gender': 0,
+    'eyewear_type': 0,
+    'lenstype': 0,
+    'frame_size': 0,
+    'blue_light': null,
+    'shade': '',
+    'face_shape': '',
+    'facial_features': '',
+    'shape': '',
+    'brand': ''
+
   })
   
   console.log(pages, ' ---- ', counter)

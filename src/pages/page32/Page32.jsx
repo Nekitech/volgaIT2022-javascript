@@ -2,13 +2,14 @@ import React, {useContext} from 'react'
 import TitlePage from '../../components/UI/titlePage/TitlePage'
 import ButtonChoice from '../../components/UI/buttonChoice/ButtonChoice'
 import ButtonSkip from '../../components/UI/buttonSkip/ButtonSkip'
-import { CounterContext, PageHistory } from '../../context'
+import { CounterContext, PageHistory, UserAnswer } from '../../context'
 import {Link} from 'react-router-dom'
 import classes from './Page32.module.css'
 function Page32() {
   const page = 'Page32'
   let {pages, setPages} = useContext(PageHistory)
   let {counter, setCounter} = useContext(CounterContext)
+  let {ans, setAns} = useContext(UserAnswer)
   return (
     <div className='page'>
         <TitlePage text={'What do you need your glasses for?'}/>
@@ -16,8 +17,11 @@ function Page32() {
           <ButtonChoice style={{height: '84px'}} onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, {'lenstype': 6}))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'lenstype': 6})))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
+                  
           }} name={'Near Vision'}/>     
         </Link>
 
@@ -25,6 +29,8 @@ function Page32() {
           <ButtonChoice style={{height: '84px'}} onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, {'lenstype': 6}))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'lenstype': 6})))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
           }} name={'Distance Vision'}/>     
@@ -34,6 +40,8 @@ function Page32() {
           <ButtonChoice style={{height: '84px'}} onClick={() => {
                   setCounter(counter+=1)
                   setPages(pages => [...pages, page])
+                  setAns(ans => Object.assign({}, ans, {'lenstype': 7}))
+                  window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'lenstype': 7})))
                   window.sessionStorage.setItem('counter', JSON.stringify(counter))
                   window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
           }} name={'Multifocal / Progressive'}/>

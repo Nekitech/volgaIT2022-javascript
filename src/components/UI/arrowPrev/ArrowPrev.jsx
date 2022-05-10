@@ -63,7 +63,6 @@ const ArrowPrev = (props) => {
             setAns(ans => Object.assign({}, ans, {
               'selectGlass':[],
               'selectBrand': []
-              
             }))
             window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {
               'selectGlass':[],
@@ -76,8 +75,7 @@ const ArrowPrev = (props) => {
             window.sessionStorage.setItem('pages', JSON.stringify([...pages.slice(0, -1)]))
             setAns(ans => Object.assign({}, ans, {
               'selectGlass':[],
-              'selectBrand': [],
-              
+              'selectBrand': [],             
             }))
             window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {
               'selectGlass':[],
