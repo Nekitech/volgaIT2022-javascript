@@ -24,6 +24,7 @@ const ArrowPrev = (props) => {
       window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, value)))
     }
   }
+
   return (
     <div>
       {
@@ -49,18 +50,18 @@ const ArrowPrev = (props) => {
                 'women': false,
               }, true)
             }
-            else if (pages[pages.length - 1] === 'Page7' && counter === 8) {
+            else if ((pages[pages.length - 1] === 'Page8' && counter === 9) || (pages[pages.length - 1] === 'Page7' && counter === 8)) {
               decrement()
               prevPage({
-                'selectGlass': [],
-                'selectBrand': []
+                'shape': '',
+                'brand': ''
               }, true)
             }
             else if (pages[pages.length - 1] === 'Page9' && counter === 10) {
               decrement()
               prevPage({
-                'selectGlass': [],
-                'selectBrand': []
+                'shape': '',
+                'brand': ''
               }, true)
             }
             else {

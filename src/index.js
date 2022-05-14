@@ -12,8 +12,6 @@ function Main(){
     'women': false,
     'eyeglasses': false,
     'sunglasses': false,
-    'selectGlass': [],
-    'selectBrand': [],
     'gender': 0,
     'eyewear_type': 0,
     'lenstype': 0,
@@ -38,7 +36,7 @@ function Main(){
           </UserAnswer.Provider>
         </PageHistory.Provider>
       </CounterContext.Provider> 
-  </BrowserRouter>
+      </BrowserRouter>
   )
 }
 

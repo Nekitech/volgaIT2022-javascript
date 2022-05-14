@@ -24,13 +24,12 @@ function Page10() {
             return false
         }
     }
-    let button = useRef(null)
+    let button = useRef()
     window.addEventListener('click', (event) => {
         if (ans['selectBrand'] !== undefined && event.target.hasAttribute('id')) {
             Array.from(event?.target?.childNodes[0]?.childNodes).forEach((el) => {
                 if (el?.hasAttribute('id') && event.clientX > el?.getBoundingClientRect().x && event.clientX < (el?.getBoundingClientRect().x + el?.getBoundingClientRect().width)) {
                     let nameItem = el.getAttribute('name')
-                    console.log(nameItem)
                     let arrayAns = ans['selectBrand']
                     if (checkElem(arrayAns, nameItem)) {
                         ans['selectBrand'].push(nameItem)

@@ -23,16 +23,12 @@ const Header = (props) => {
       'women': false,
       'eyeglasses': false,
       'sunglasses': false,
-      'selectGlass': [],
-      'selectBrand': []
     }))
     window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {
       'men': false,
       'women': false,
       'eyeglasses': false,
       'sunglasses': false,
-      'selectGlass': [],
-      'selectBrand': [],
       'gender': 0,
       'eyewear_type': 0,
       'lenstype': 0,
