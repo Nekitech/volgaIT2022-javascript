@@ -22,19 +22,19 @@ function Page2MenOrWoman() {
         <TitlePage text={'What type of glasses are you looking for?'}/>
         <Link to='/Page31'>
             <ButtonChoice onClick={() => {
-              nextPage({'eyeglasses': true, 'eyewear_type': 210})
+              nextPage({'eyewear_type': 210})
               }} url="../images/eyeglasses.svg" name={"Eyeglasses"}/>
         </Link>
 
         <Link to='/Page31'>
         <ButtonChoice onClick={() => {
-          nextPage({'sunglasses': true, 'eyewear_type': 211})
+          nextPage({'eyewear_type': 211})
         }} url="../images/sunglasses.svg" name={"Sunglasses"}/>
         </Link>
 
         <Link to='/Page31'>
             <ButtonSkip onClick={() => {
-              nextPage({'sunglasses': true, 'eyeglasses': true})
+              nextPage()
               }} text={'I want to see both'}/>
         </Link>
     </div>

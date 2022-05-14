@@ -8,10 +8,6 @@ function Main(){
   const [counter, setCounter] = useState(JSON.parse(window.sessionStorage.getItem('counter')) || 0)
   const [pages, setPages] = useState(JSON.parse(window.sessionStorage.getItem('pages')) || [""])
   const [ans, setAns] = useState(JSON.parse(window.sessionStorage.getItem('ans')) ||{
-    'men':false,
-    'women': false,
-    'eyeglasses': false,
-    'sunglasses': false,
     'gender': 0,
     'eyewear_type': 0,
     'lenstype': 0,

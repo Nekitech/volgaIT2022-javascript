@@ -29,59 +29,11 @@ function Page8(props) {
   let count = 0
   let selectGlass = []
 
-  // page_.addEventListener('click', (event) => {
-  //     if(event.target?.getAttribute('id') === 'item' || event.target?.closest('#item')?.getAttribute('id') === 'item'){
-  //       let sliderElem = (event.target?.getAttribute('id') === 'item') ? event.target : event.target?.closest('#item')
-  //       if(sliderElem.getAttribute('id') === 'item'){
-  //         if(sliderElem.classList.contains('selected')){
-  //           count-=1
-  //           sliderElem.classList.remove('selected')
-  //         }
-  //         else{
-  //           count+=1
-
-  //           sliderElem.classList.add('selected')
-  //         }
-  //         if(count > 0 ){
-  //           console.log(count, '^^^^^', sliderElem)
-  //           button.current?.classList.add(classes.btnSelected)
-
-  //         }
-  //         else{
-  //           console.log(count, '   ', sliderElem)
-  //           button.current?.classList.remove(classes.btnSelected)
-
-  //         }
-  //         // console.log(count)
-  //       }
-  //     }
-  //   // if (ans['selectGlass'] !== undefined && event.target.hasAttribute('id')) {
-  //   //   Array.from(event?.target?.childNodes[0]?.childNodes).forEach((el) => {
-  //   //     if (el?.hasAttribute('id') && event.clientX > el?.getBoundingClientRect().x && event.clientX < (el?.getBoundingClientRect().x + el?.getBoundingClientRect().width)) {
-  //   //       let nameItem = el.getAttribute('name')
-  //   //       let arrayAns = ans['selectGlass']
-  //   //       if (checkElem(arrayAns, nameItem)) {
-  //   //         ans['selectGlass'].push(nameItem)
-  //   //         setAns(ans)
-  //   //         el.classList.add('selected')
-  //   //         button.current?.classList.add(classes.btnSelected)
-  //   //       }
-  //   //       else {
-  //   //         ans['selectGlass'].splice(ans['selectGlass'].indexOf(nameItem), 1)
-  //   //         setAns(ans)
-  //   //         el.classList.remove('selected')
-  //   //         if (ans['selectGlass'].length === 0) {
-  //   //           button.current?.classList.remove(classes.btnSelected)
-  //   //         }
-  //   //       }
-  //   //     }
-  //   //   });
-  //   // }
-  // })
   const nextPage = (event) => {
     if (count > 0) {
       setCounter(counter += 1)
       setPages(pages => [...pages, page])
+      setAns(ans => Object.assign({}, ans, {'shape': selectGlass.join(',')}))
       window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'shape': selectGlass.join(',')})))
       window.sessionStorage.setItem('counter', JSON.stringify(counter))
       window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
@@ -91,7 +43,6 @@ function Page8(props) {
     }
   }
   return (
-
     <div onClick={(event) => {
       if (event.target?.getAttribute('id') === 'item' || event.target?.closest('#item')?.getAttribute('id') === 'item') {
         let sliderElem = (event.target?.getAttribute('id') === 'item') ? event.target : event.target?.closest('#item')

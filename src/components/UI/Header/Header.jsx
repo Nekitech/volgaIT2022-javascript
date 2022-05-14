@@ -19,16 +19,8 @@ const Header = (props) => {
     setPages(pages => [])
     window.sessionStorage.setItem('pages', JSON.stringify([]))
     setAns(ans => Object.assign({}, {
-      'men': false,
-      'women': false,
-      'eyeglasses': false,
-      'sunglasses': false,
     }))
     window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {
-      'men': false,
-      'women': false,
-      'eyeglasses': false,
-      'sunglasses': false,
       'gender': 0,
       'eyewear_type': 0,
       'lenstype': 0,

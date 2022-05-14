@@ -5,6 +5,7 @@ import ButtonSend from '../../components/UI/buttonSend/ButtonSend'
 import { UserAnswer } from '../../context'
 function Page11() {
   let {ans} = useContext(UserAnswer)
+  let url = document.querySelector('[data-source]')?.dataset?.source || 'https://example.com/?'
   return (
     <div className='page'>
         <Circle style={{marginTop:'38px'}} url={'../images/gift.svg'}/>
@@ -12,9 +13,13 @@ function Page11() {
         <p className={classes.end_page__text}>Send the results to your email to receive special discounts.</p> 
         <ButtonSend text={"Send"} onClick={() => {
           for(let [key, value] of Object.entries(ans)){
-            console.log(key,' : ', value)
+            if(value == false){
+              continue
+            }
+            url += key + '=' + value + '&'
           }
-          console.log(ans)
+          
+          console.log(url.replace(/.$/g, ''))
         }}/>
         <p className={classes.end_page__textBottom} style={{marginTop:'98px'}}>By clicking ‘Send’ you agree to our Terms of Use & Privacy Policy and receiving promotion emails</p>
     </div>

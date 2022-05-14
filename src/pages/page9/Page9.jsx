@@ -7,8 +7,8 @@ function Page9() {
     const page = 'Page9'
     let { pages, setPages } = useContext(PageHistory)
     let { counter, setCounter } = useContext(CounterContext)
-    function nextPage() {
-        setCounter(counter += 1)
+    function nextPage(step) {
+        setCounter(counter += step)
         window.sessionStorage.setItem('counter', JSON.stringify(counter))
         setPages(pages => [...pages, page])
         window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
@@ -18,12 +18,12 @@ function Page9() {
             <TitlePage style={{ width: '254px', height: '60px' }} text={"Are you looking for any particular eyewear brands?"} />
             <Link to="/Page10">
                 <ButtonChoice onClick={() => {
-                    nextPage()
+                    nextPage(1)
                 }} name={"Yes, I have some in mind"} />
             </Link>
             <Link to="/Page11">
                 <ButtonChoice onClick={() => {
-                    nextPage()
+                    nextPage(2)
                 }} name={"No, brand isn't important"} />
             </Link>
 

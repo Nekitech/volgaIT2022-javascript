@@ -25,32 +25,46 @@ function Page10() {
         }
     }
     let button = useRef()
-    window.addEventListener('click', (event) => {
-        if (ans['selectBrand'] !== undefined && event.target.hasAttribute('id')) {
-            Array.from(event?.target?.childNodes[0]?.childNodes).forEach((el) => {
-                if (el?.hasAttribute('id') && event.clientX > el?.getBoundingClientRect().x && event.clientX < (el?.getBoundingClientRect().x + el?.getBoundingClientRect().width)) {
-                    let nameItem = el.getAttribute('name')
-                    let arrayAns = ans['selectBrand']
-                    if (checkElem(arrayAns, nameItem)) {
-                        ans['selectBrand'].push(nameItem)
-                        setAns(ans)
-                        el.classList.add('selected')
-                        button.current?.classList.add(classes.btnSelected)
-                    }
-                    else {
-                        ans['selectBrand'].splice(ans['selectBrand'].indexOf(nameItem), 1)
-                        setAns(ans)
-                        el.classList.remove('selected')
-                        if (ans['selectBrand'].length === 0) {
-                            button.current?.classList.remove(classes.btnSelected)
-                        }
-                    }
-                }
-            });
-        }
-    })
+    let count = 0
+    let selectBrand = []
+    
+    const nextPage = (event) =>  {
+        if (count > 0) {
+            setCounter(counter += 1)
+            setPages(pages => [...pages, page])
+            setAns(ans => Object.assign({}, ans, {'brand': selectBrand.join(',')}))
+            window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'brand': selectBrand.join(',')})))
+            window.sessionStorage.setItem('counter', JSON.stringify(counter))
+            window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
+          }
+          else {
+            event.preventDefault()
+          }
+    }
     return (
-        <div className='page'>
+        <div data-source="lol" onClick={(event) => {
+            if (event.target?.getAttribute('id') === 'item' || event.target?.closest('#item')?.getAttribute('id') === 'item') {
+              let sliderElem = (event.target?.getAttribute('id') === 'item') ? event.target : event.target?.closest('#item')
+              if (sliderElem.getAttribute('id') === 'item') {
+                if (sliderElem.classList.contains('selected')) {
+                  count -= 1
+                  sliderElem.classList.remove('selected')
+                  selectBrand.pop(sliderElem.getAttribute('name'))
+                }
+                else {
+                  count += 1
+                  sliderElem.classList.add('selected')
+                  selectBrand.push(sliderElem.getAttribute('name'))
+                }
+                if (count > 0) {
+                  button.current?.classList.add(classes.btnSelected)
+                }
+                else {
+                  button.current?.classList.remove(classes.btnSelected)
+                }
+              }
+            }
+          }} className='page'>
             <TitlePage style={{ margin: '30px 0 0 0' }} text={"Choose your favorite brands"} />
             <h4 style={{
                 margin: '10px 0 20px 0', fontStyle: 'normal',
@@ -81,13 +95,7 @@ function Page10() {
                 <SliderItem url={"../images/burberry.svg"} id="item" name='burberry' />
             </Slider>
             <Link to="/Page11">
-                <button onClick={() => {
-                    setCounter(counter += 1)
-                    setPages(pages => [...pages, page])
-                    window.sessionStorage.setItem('counter', JSON.stringify(counter))
-                    window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
-                    window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, {'brand': ans['selectBrand'].join(',')})))
-                }} ref={button} style={{ marginTop: '14px', cursor: ' pointer' }} className={classes.btn}>Continue</button>
+                <button onClick={nextPage} ref={button} style={{ marginTop: '14px', cursor: ' pointer' }} className={classes.btn}>Continue</button>
             </Link>
         </div>
     )

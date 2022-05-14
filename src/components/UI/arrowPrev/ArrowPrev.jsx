@@ -39,15 +39,13 @@ const ArrowPrev = (props) => {
             else if (pages[pages.length - 1] === 'Page2MenOrWoman' && counter === 3) {
               decrement()
               prevPage({
-                'eyeglasses': false,
-                'sunglasses': false
+                'eyewear_type': ''
               }, true)
             }
             else if (pages[pages.length - 1] === 'Page1' && counter === 2) {
               decrement()
               prevPage({
-                'men': false,
-                'women': false,
+                'gender': ''
               }, true)
             }
             else if ((pages[pages.length - 1] === 'Page8' && counter === 9) || (pages[pages.length - 1] === 'Page7' && counter === 8)) {

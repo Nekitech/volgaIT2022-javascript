@@ -25,19 +25,19 @@ const Page1 = () => {
       <TitlePage text={'You are looking for'} />
       <Link to='/Page2MenOrWoman'>
         <ButtonChoice onClick={() => {
-          nextPage({ 'women': true, 'gender': 5 })
+          nextPage({'gender': 5 })
         }} url="../images/women style.svg" name={"Women Style"} />
       </Link>
 
       <Link to='/Page2MenOrWoman'>
         <ButtonChoice onClick={() => {
-          nextPage({ 'men': true, 'gender': 4 })
+          nextPage({'gender': 4 })
         }} url="../images/men style.svg" name={"Men Style"} />
       </Link>
 
       <Link to='/Page2MenOrWoman'>
         <ButtonSkip text={"I'd like to see both"} onClick={() => {
-          nextPage({ 'women': true, 'men': true })
+          nextPage()
         }} />
       </Link>
     </div>

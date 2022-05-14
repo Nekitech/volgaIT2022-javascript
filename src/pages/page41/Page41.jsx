@@ -9,7 +9,7 @@ function Page41() {
   let { counter, setCounter } = useContext(CounterContext)
   let { pages, setPages } = useContext(PageHistory)
   let { ans, setAns } = useContext(UserAnswer)
-  let choicePage = (ans['sunglasses'] === true && ans['eyeglasses'] !== true) ? 'SunglassesPage' : 'EyeglassesPage'
+  let choicePage = (ans['eyewear_type'] === 211 && ans['eyewear_type'] !== 210) ? 'SunglassesPage' : 'EyeglassesPage'
   function nextPage(value, choiceAns = false, count = false) {
     if (count) {
       setCounter(counter += 1)

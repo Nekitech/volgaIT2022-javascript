@@ -11,7 +11,7 @@ let [isShow, setisShow] = useState(false)
 let { counter, setCounter } = useContext(CounterContext)
 let { ans, setAns } = useContext(UserAnswer)
 let { pages, setPages } = useContext(PageHistory)
-let choicePage = (ans['sunglasses'] === true && ans['eyeglasses'] !== true) ? 'SunglassesPage' : 'EyeglassesPage' 
+let choicePage = (ans['eyewear_type'] === 211 && ans['eyewear_type'] !== 210) ? 'SunglassesPage' : 'EyeglassesPage' 
 useEffect(() => {
     const timerId = setTimeout(() => setisShow(!isShow), 3000)
     return () => clearTimeout(timerId)

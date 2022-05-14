@@ -8,11 +8,11 @@ function SunglassesPage() {
   let {ans, setAns} = useContext(UserAnswer)
   let {counter, setCounter} = useContext(CounterContext)
   let {pages, setPages} = useContext(PageHistory)
-  let choicePage = (ans['men'] === true && ans['women'] === false) 
+  let choicePage = (ans['gender'] === 4 && ans['gender'] !== 5) 
   ? 'Page6Men' 
-  : (ans['women'] === true && ans['men'] === false) 
+  : (ans['gender'] === 5 && ans['gender'] !== 4) 
   ? 'Page6Women'
-  : (ans['women'] === true && ans['men'] === true)
+  : (ans['gender'] !== 5 && ans['gender'] !== 4)
   ? 'Page6Both'
   : null
 
