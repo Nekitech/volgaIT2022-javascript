@@ -43,7 +43,6 @@ const App = () => {
           <Route path="/Page10" element={<Page10/>}/>
           <Route path="/Page11" element={<Page11/>}/>
         </Routes>
-        lol
     </div>
   );
 }
