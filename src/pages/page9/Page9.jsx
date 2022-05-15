@@ -14,7 +14,7 @@ function Page9() {
         window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
     }
     return (
-        <div className='page'>
+        <section className='page'>
             <TitlePage style={{ width: '254px', height: '60px' }} text={"Are you looking for any particular eyewear brands?"} />
             <Link to="/Page10">
                 <ButtonChoice onClick={() => {
@@ -27,7 +27,7 @@ function Page9() {
                 }} name={"No, brand isn't important"} />
             </Link>
 
-        </div>
+        </section>
     )
 }
 

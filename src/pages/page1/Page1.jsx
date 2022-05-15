@@ -21,7 +21,7 @@ const Page1 = () => {
     window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, value)))
   }
   return (
-    <div className='page'>
+    <section className='page'>
       <TitlePage text={'You are looking for'} />
       <Link to='/Page2MenOrWoman'>
         <ButtonChoice onClick={() => {
@@ -40,7 +40,7 @@ const Page1 = () => {
           nextPage()
         }} />
       </Link>
-    </div>
+    </section>
   )
 }
 

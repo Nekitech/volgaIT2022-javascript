@@ -19,7 +19,7 @@ import Page8 from './pages/page8/Page8';
 import Page9 from './pages/page9/Page9';
 import Page10 from './pages/page10/Page10';
 import Page11 from './pages/page11/Page11';
-function App() {
+const App = () => {
 
   return (
     <div className="App">
@@ -43,6 +43,7 @@ function App() {
           <Route path="/Page10" element={<Page10/>}/>
           <Route path="/Page11" element={<Page11/>}/>
         </Routes>
+        lol
     </div>
   );
 }

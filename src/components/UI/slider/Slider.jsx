@@ -4,14 +4,14 @@ import classes from './Slider.module.css'
 function Slider({ children }) {
   const [items, setItems] = useState([])
  
-  let track = document.querySelector('#track')
-  let slider = document.querySelector('#slider')
+  // let track = document.querySelector('#track')
+  // let slider = document.querySelector('#slider')
   useEffect(() => {
     setItems(Children.map(children, item => {
       return cloneElement(item)
     }))
   }, [])
-  let scroll = 0
+  // let scroll = 0
   // function checkBorders() {
   //   let outer = slider.getBoundingClientRect()
   //   let inner = track.getBoundingClientRect()

@@ -18,7 +18,7 @@ function Page2MenOrWoman() {
     window.sessionStorage.setItem('pages', JSON.stringify([...pages, page]))
   }
   return (
-    <div className='page'>
+    <section className='page'>
         <TitlePage text={'What type of glasses are you looking for?'}/>
         <Link to='/Page31'>
             <ButtonChoice onClick={() => {
@@ -37,7 +37,7 @@ function Page2MenOrWoman() {
               nextPage()
               }} text={'I want to see both'}/>
         </Link>
-    </div>
+    </section>
   )
 }
 

@@ -9,7 +9,7 @@ import classes from './Header.module.css'
 
 const Header = (props) => {
   let { counter, setCounter } = useContext(CounterContext)
-  let { setPages } = useContext(PageHistory)
+  let {setPages } = useContext(PageHistory)
   let { ans, setAns } = useContext(UserAnswer)
   const pagesAll = 10
 
@@ -35,7 +35,7 @@ const Header = (props) => {
 
   }
   return (
-    <div className={classes.header}>
+    <header className={classes.header}>
       <div className={classes.header__top} style={(counter === 11) ? { padding: '10px 25px 8px 25px' } : { padding: '20px 25px 19px 25px' }}>
         {
           (counter >= 1 && counter < 11) ? (
@@ -52,7 +52,6 @@ const Header = (props) => {
             ? (<ArrowNext></ArrowNext>)
             : (<CloseButton onClick={comeBackStartPage}></CloseButton>)
         }
-
       </div>
       {
         (counter >= 1)
@@ -63,8 +62,7 @@ const Header = (props) => {
           :
           (null)
       }
-
-    </div>
+    </header>
   )
 }
 

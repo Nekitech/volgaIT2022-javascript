@@ -29,7 +29,7 @@ function SunglassesPage() {
     }
     }
   return (
-    <div className='page'>
+    <section className='page'>
       <TitlePage text={"When you’re out and about, which shade of lenses do you prefer?"}/>
       <div>
         <Link to={'/' + choicePage}>
@@ -48,7 +48,7 @@ function SunglassesPage() {
           }} url={'../images/photochromic.svg'} text={"Transitioning Shade"}/>
         </Link>
       </div>
-    </div>
+    </section>
   )
 }
 

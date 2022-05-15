@@ -6,8 +6,7 @@ import {Link} from 'react-router-dom'
 const StartPage = (props) => {
   
   return (
-    <div>
-      <div className={classes.start_page__block}>
+      <section className={classes.start_page__block}>
         <img src="../images/start-img.png" alt="" />
         <h3 className={classes.start_page__title}>Let’s find your perfect pair!</h3>
         <p className={classes.start_page__text}>Take the quiz to easily discover your perfect fit from thousands of styles</p> 
@@ -15,10 +14,8 @@ const StartPage = (props) => {
         <Link to="/Page1">
           <ButtonSwitched name="Следующая страница"></ButtonSwitched>   
         </Link>
-        
-      </div>
-        
-    </div>
+        Let’s find your perfect pair!
+      </section>
   )
 }
 

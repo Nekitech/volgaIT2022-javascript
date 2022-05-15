@@ -19,10 +19,7 @@
     color: #425A60;
     margin-left: 41px;
 }
-.icon {
-    
-  
-}
+
 .button_text:before{
     content: '';
     position: absolute;

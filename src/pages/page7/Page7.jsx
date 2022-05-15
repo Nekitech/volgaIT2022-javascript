@@ -23,7 +23,7 @@ function Page7() {
     }
   }
   return (
-    <div className='page'>
+    <section className='page'>
       <TitlePage style={{ width: '240px', marginBottom: '32px' }} text={"How would you define your facial features?"} />
       <Link to="/Page8">
         <ButtonChoice onClick={() => {
@@ -45,7 +45,7 @@ function Page7() {
           nextPage(null, false, true)
         }} style={{ marginTop: '51px' }} text={"I don’t know"} />
       </Link>
-    </div>
+    </section>
   )
 }
 

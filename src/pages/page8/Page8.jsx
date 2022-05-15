@@ -43,7 +43,7 @@ function Page8(props) {
     }
   }
   return (
-    <div onClick={(event) => {
+    <section onClick={(event) => {
       if (event.target?.getAttribute('id') === 'item' || event.target?.closest('#item')?.getAttribute('id') === 'item') {
         let sliderElem = (event.target?.getAttribute('id') === 'item') ? event.target : event.target?.closest('#item')
         if (sliderElem.getAttribute('id') === 'item') {
@@ -57,12 +57,7 @@ function Page8(props) {
             sliderElem.classList.add('selected')
             selectGlass.push(sliderElem.getAttribute('name'))
           }
-          if (count > 0) {
-            button.current?.classList.add(classes.btnSelected)
-          }
-          else {
-            button.current?.classList.remove(classes.btnSelected)
-          }
+          (count > 0) ? button.current?.classList.add(classes.btnSelected) : button.current?.classList.remove(classes.btnSelected)
         }
       }
     }} className='page'>
@@ -76,32 +71,31 @@ function Page8(props) {
       }}>You can pick more than one.</h4>
 
       <Slider>
-        <SliderItem url={"../images/rectangle.svg"} text={"Rectangle"} name="rectangle" id="item" />
-        <SliderItem url={"../images/browline.svg"} text={"Browline"} name="browline" id="item" />
-        <SliderItem url={"../images/aviator.svg"} text={"Aviator"} name="aviator" id="item" />
-        <SliderItem url={"../images/geometric.svg"} text={"Geometric"} name="geometric" id="item" />
+        <SliderItem style={{paddingBottom: '13px'}} url={"../images/rectangle.svg"} text={"Rectangle"} name="rectangle" id="item" />
+        <SliderItem style={{paddingBottom: '13px'}} url={"../images/browline.svg"} text={"Browline"} name="browline" id="item" />
+        <SliderItem style={{paddingBottom: '13px'}} url={"../images/aviator.svg"} text={"Aviator"} name="aviator" id="item" />
+        <SliderItem style={{paddingBottom: '13px'}} url={"../images/geometric.svg"} text={"Geometric"} name="geometric" id="item" />
 
       </Slider>
       <Slider>
-        <SliderItem url={"../images/wayframe.svg"} text={"Wayframe"} name="wayframe" id="item" />
-        <SliderItem url={"../images/round.svg"} text={"Round"} name="round" id="item" />
-        <SliderItem url={"../images/oval.svg"} text={"Oval"} name="oval" id="item" />
-        <SliderItem url={"../images/oversized.svg"} text={"Oversized"} name="oversized" id="item" />
+        <SliderItem style={{paddingBottom: '13px'}} url={"../images/wayframe.svg"} text={"Wayframe"} name="wayframe" id="item" />
+        <SliderItem style={{paddingBottom: '13px'}} url={"../images/round.svg"} text={"Round"} name="round" id="item" />
+        <SliderItem style={{paddingBottom: '13px'}} url={"../images/oval.svg"} text={"Oval"} name="oval" id="item" />
+        <SliderItem style={{paddingBottom: '13px'}} url={"../images/oversized.svg"} text={"Oversized"} name="oversized" id="item" />
 
       </Slider>
       <Slider>
-        <SliderItem url={"../images/catEye.svg"} text={"Cat Eye"} name="cat_eye" id="item" />
-        <SliderItem url={"../images/rimless.svg"} text={"Rimless"} name="rimless" id="item" />
-        <SliderItem url={"../images/square.svg"} text={"Square"} name="square" id="item" />
-        <SliderItem url={"../images/wrap.svg"} text={"Wrap"} name="wrap" id="item" />
+        <SliderItem style={{paddingBottom: '13px'}} url={"../images/catEye.svg"} text={"Cat Eye"} name="cat_eye" id="item" />
+        <SliderItem style={{paddingBottom: '13px'}} url={"../images/rimless.svg"} text={"Rimless"} name="rimless" id="item" />
+        <SliderItem style={{paddingBottom: '13px'}} url={"../images/square.svg"} text={"Square"} name="square" id="item" />
+        <SliderItem style={{paddingBottom: '13px'}} url={"../images/wrap.svg"} text={"Wrap"} name="wrap" id="item" />
 
 
       </Slider>
       <Link to="/Page9">
-
         <button onClick={nextPage} ref={button} style={{ marginTop: '14px', cursor: ' pointer' }} className={classes.btn}>Continue</button>
       </Link>
-    </div>
+    </section>
 
   )
 }

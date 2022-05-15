@@ -22,8 +22,7 @@ function Page6Both() {
     }
   }
   return (
-    <div>
-      <div className='page'>
+      <section className='page'>
         <TitlePage text={"Every face shape has a perfect fit. What’s yours?"} />
         <Link to="/Page7">
           <ButtonWithIcon onClick={() => {
@@ -45,9 +44,7 @@ function Page6Both() {
             nextPage(null, false, true)
           }} style={{ marginTop: '77px' }} text={"I don’t know"} />
         </Link>
-
-      </div>
-    </div>
+      </section>
   )
 }
 

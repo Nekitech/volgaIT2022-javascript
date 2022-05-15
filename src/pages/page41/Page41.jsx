@@ -23,7 +23,7 @@ function Page41() {
     }
   }
   return (
-    <div className='page'>
+    <section className='page'>
       <TitlePage style={{ marginBottom: '38px' }} text={"What's your current frame size?"} />
       <img style={{ marginBottom: '35px' }} src="../images/sizes.svg" alt="" />
       <div>
@@ -48,7 +48,7 @@ function Page41() {
           nextPage()
         }} style={{ marginTop: '47px' }} text={"I don't know"} />
       </Link>
-    </div>
+    </section>
   )
 }
 

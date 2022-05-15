@@ -26,7 +26,7 @@ function Page31() {
           ? (<BetweenPage text={"Let's get to know you!"} />)
           :
           (
-            <div className='page'>
+            <section className='page'>
               <TitlePage text={'Do you need vision correction?'} />
               <Link to="/Page32">
                 <ButtonChoice onClick={() => {
@@ -45,7 +45,7 @@ function Page31() {
                   nextPage()
                 }} text={"Skip"} />
               </Link>
-            </div>
+            </section>
           )
       }
     </div>

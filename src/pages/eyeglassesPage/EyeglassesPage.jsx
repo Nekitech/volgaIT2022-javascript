@@ -30,7 +30,7 @@ function EyeglassesPage() {
   }
   return (
 
-    <div className='page'>
+    <section className='page'>
       <TitlePage style={{ width: '330px', height: '60px', marginBottom: '32px' }} text={'Would you like to protect your eyes from light emanating from screens?'} />
       <div>
         <Link onClick={() => {
@@ -44,7 +44,7 @@ function EyeglassesPage() {
           <ButtonChoice name={'No'} />
         </Link>
       </div>
-    </div>
+    </section>
   )
 }
 

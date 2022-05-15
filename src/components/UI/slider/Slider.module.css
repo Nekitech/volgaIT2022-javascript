@@ -2,21 +2,28 @@
     position: relative;
     top: 7px;
     left: 12px;
-    right: 12px;
-    width: 200%;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
+    padding-right: 12px;
 }
 .slider {
     position: relative;
-    left: 0;
+   
     overflow: hidden;
     width: 100%;
     height: 100%;
     margin-bottom: 10px;
     overflow-x: scroll;
-    /* overscroll-behavior-inline: contain; */
+}
+@media (min-width: 700px) {
+    .sliderTrack {
+        
+        justify-content: center;
+        
+    }
+    
 }
 .slider::-webkit-scrollbar {
     display: none;

@@ -22,7 +22,7 @@ function Page6Women() {
     }
   }
   return (
-    <div className='page'>
+    <section className='page'>
       <TitlePage text={"Every face shape has a perfect fit. What’s yours?"} />
       <Link to="/Page7">
         <ButtonWithIcon onClick={() => {
@@ -44,7 +44,7 @@ function Page6Women() {
           nextPage(null, false, true)
         }} style={{ marginTop: '77px' }} text={"I don’t know"} />
       </Link>
-    </div>
+    </section>
   )
 }
 

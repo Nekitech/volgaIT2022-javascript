@@ -36,7 +36,7 @@ return (
         (<BetweenPage text={"No worries, we've got you!"} />)
         :
         (
-        <div className='page'>
+        <section className='page'>
             <TitlePage style={{ marginBottom: '32px', width: '210px', textAlign: 'center' }} text={'How wide would you say your face is?'} />
             <div>
                 <Link to={'/' + choicePage}>
@@ -60,7 +60,7 @@ return (
                     }} style={{ marginTop: '87px' }} text={"I'm not sure"} />
                 </Link>
             </div>
-        </div>
+        </section>
     )
 }
 </div>

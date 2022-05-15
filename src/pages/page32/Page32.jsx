@@ -21,7 +21,7 @@ function Page32() {
     }
   }
   return (
-    <div className='page'>
+    <section className='page'>
       <TitlePage text={'What do you need your glasses for?'} />
       <Link to='/Page41' >
         <ButtonChoice style={{ height: '84px' }} onClick={() => {
@@ -47,7 +47,7 @@ function Page32() {
         }} text={'Skip'} />
       </Link>
 
-    </div>
+    </section>
   )
 }
 
