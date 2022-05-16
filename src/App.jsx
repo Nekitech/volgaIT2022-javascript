@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './styles/App.css'
+// import './styles/App.css'
 import Header from './components/UI/Header/Header';
 import StartPage from './pages/startPage/StartPage';
 import Page1 from './pages/page1/Page1'; 
@@ -19,10 +19,11 @@ import Page8 from './pages/page8/Page8';
 import Page9 from './pages/page9/Page9';
 import Page10 from './pages/page10/Page10';
 import Page11 from './pages/page11/Page11';
+import {css, StyleSheet} from 'aphrodite'
 const App = () => {
 
   return (
-    <div className="App">
+    <div className={css(styles.App)}>
       <Header/>
         <Routes>
           <Route path="/" element={<StartPage/>}/>
@@ -46,5 +47,36 @@ const App = () => {
     </div>
   );
 }
- 
+const styles = StyleSheet.create({
+App:{
+    position: 'relative',
+    maxWidth: '768px',
+    minWidth: '375px',
+    width: '100%',
+    height: '638px',
+    margin: '0 auto',
+    backgroundColor: '#E8F0F2',
+    overflow: 'hidden',
+    textDecoration: 'none',
+    fontFamily: 'Open Sans',
+},
+body:{
+  margin: '0',
+  padding: '0',
+  boxSizing: 'border-box',
+},
+'*':{
+    margin: '0',
+    padding: '0',
+    fontFamily: 'Open Sans',
+    boxSizing: 'border-box',
+    textDecoration: 'none',
+},
+'page' :{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+}
+})
 export default App;

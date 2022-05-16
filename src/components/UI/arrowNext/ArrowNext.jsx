@@ -2,7 +2,6 @@ import React, {useContext} from 'react'
 import classes from './ArrowNext.module.css'
 import {Link}  from 'react-router-dom';
 import {CounterContext, PageHistory} from '../../../context'
-import nextArrow from '../../../images/arrowRight.svg'
 const ArrowNext = (props) => {
   const pagesAll = 10
   let {pages, setPages} = useContext(PageHistory)

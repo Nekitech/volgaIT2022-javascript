@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import classes from './ArrowPrev.module.css'
 import { Link } from 'react-router-dom';
 import { CounterContext, PageHistory, UserAnswer } from '../../../context'
-import prevArrow from '../../../images/Back (1).svg'
 const ArrowPrev = (props) => {
   let { counter, setCounter } = useContext(CounterContext)
   let { pages, setPages } = useContext(PageHistory)

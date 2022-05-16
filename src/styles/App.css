@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     font-family: 'Open Sans';
@@ -16,9 +16,6 @@
     background-color: #E8F0F2;
     overflow: hidden;
 }
-body{
-    background-color: #6c6e6e;
-}
 .page {
     display: flex;
     flex-direction: column;
@@ -30,16 +27,4 @@ body{
      -ms-user-select: none; 
      user-select: none;
 }
-.selected {
-    border: 1.96px solid #2196F3 !important;
-    position: relative;
-    z-index: 0;
-}
-.selected:before {
-    content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAuMjYyMSIgY3k9IjkuNzAyIiByPSI5LjcwMiIgZmlsbD0iIzIxOTZGMyIvPgo8cGF0aCBkPSJNNy4wMjgwOCAxMC4yNjk1TDkuNjI2ODIgMTIuOTM2TDEzLjQ5NjEgNy41NDYwMSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjk2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==');
-    top: -5px;
-    right: -5px;
-    position: absolute;
-    z-index: 2;
-}
-
+ */
