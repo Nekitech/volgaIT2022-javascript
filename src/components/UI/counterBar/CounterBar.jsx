@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     width: "0",
     height: "8px",
     backgroundColor: "#45C9FF",
-    zIndex: 1,
+    zIndex: '1',
     ":before": {
       content: "''",
       position: "absolute",

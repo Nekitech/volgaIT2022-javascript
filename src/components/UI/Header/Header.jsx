@@ -52,18 +52,19 @@ const Header = (props) => {
       fontSize: "18px",
       lineHeight: "19px",
       textAlign: "center",
-      color: "#3C5060"
+      color: "#3C5060",
+      margin: '0'
     },
     header__top: {
       display: "flex",
-      padding: "11px 25px 0 25px",
+      // padding: "11px 25px 14px 25px",
       alignItems: "center",
-      justifyContent: "space-between"
+      justifyContent: "space-between",
     }
   }) 
   return (
     <header className={css(styles.header)}>
-      <div className={css(styles.header__top)} style={(counter === 11) ? { padding: '10px 25px 8px 25px' } : { padding: '20px 25px 19px 25px' }}>
+      <div className={css(styles.header__top)} style={(counter === 11 || counter === 0) ? { padding: '14px 25px 14px 25px' } : { padding: '20px 25px 19px 25px' }}>
         {
           (counter >= 1 && counter < 11) ? (
             <ArrowPrev></ArrowPrev>
