@@ -5,6 +5,7 @@ import TitlePage from '../../components/UI/titlePage/TitlePage'
 import SliderItem from '../../components/UI/sliderItem/SliderItem'
 import { Link } from 'react-router-dom'
 import { CounterContext, UserAnswer, PageHistory } from '../../context'
+import {css, StyleSheet} from 'aphrodite/no-important'
 
 function Page10() {
   const page = 'Page10'
@@ -28,6 +29,40 @@ function Page10() {
       event.preventDefault()
     }
   }
+  const styles = StyleSheet.create({
+    page :{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxSizing: 'border-box',
+        textDecoration: 'none',
+    },
+    btn: {
+        width: '181px',
+        height: '48px',
+        backgroundColor: '#DEDEDE',
+        borderRadius: '24px',
+        fontStyle: 'normal',
+        fontWeight: '700',
+        fontSize: '18px',
+        lineHeight: '25px',
+        color: '#FFFFFF',
+        border: 'none',
+        boxShadow: '0px 1px 4px 1px rgba(0, 0, 0, 0.1)',
+    },
+    btnSelected: {
+        background: 'linear-gradient(270deg, #45C7FA 0%, #2196F3 100%) !important',
+    },
+    selected: {
+      border: '1.96px solid #2196F3 !important',
+      position: 'relative',
+      zIndex: '0'
+  }
+  })
+  const classBtn = css(
+    (count > 0) ? styles.btnSelected : styles.btn
+  )
   return (
     <section onClick={(event) => {
       if (event.target?.getAttribute('id') === 'item' || event.target?.closest('#item')?.getAttribute('id') === 'item') {
@@ -36,17 +71,47 @@ function Page10() {
           if (sliderElem.classList.contains('selected')) {
             count -= 1
             sliderElem.classList.remove('selected')
+            sliderElem.style.cssText = `none`
             selectBrand.pop(sliderElem.getAttribute('name'))
           }
           else {
             count += 1
+            sliderElem.style.cssText = `
+            border: 1.96px solid #2196F3 !important;
+            position: relative;
+            zIndex: 0;
+            `
             sliderElem.classList.add('selected')
             selectBrand.push(sliderElem.getAttribute('name'))
           }
-          (count > 0) ? button.current?.classList.add(classes.btnSelected) : button.current?.classList.remove(classes.btnSelected)
+          (count > 0) ? button.current.style.cssText = `
+          width: 181px;
+          height: 48px;
+          backgroundColor: #DEDEDE;
+          borderRadius: 24px;
+          fontStyle: normal;
+          fontWeight: 700;
+          fontSize: 18px;
+          lineHeight: 25px;
+          color: #FFFFFF;
+          border: none;
+          boxShadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.1);
+          background: linear-gradient(270deg, #45C7FA 0%, #2196F3 100%) !important;
+          ` : button.current.style.cssText = `
+          height: 48px;
+          backgroundColor: #DEDEDE;
+          borderRadius: 24px;
+          fontStyle: normal;
+          fontWeight: 700;
+          fontSize: 18px;
+          lineHeight: 25px;
+          color: #FFFFFF;
+          border: none;
+          boxShadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.1);
+          `
         }
       }
-    }} className='page'>
+    }} className={css(styles.page)}>
       <TitlePage style={{ margin: '30px 0 0 0' }} text={"Choose your favorite brands"} />
       <h4 style={{
         margin: '10px 0 20px 0', fontStyle: 'normal',
@@ -76,8 +141,21 @@ function Page10() {
         <SliderItem url={'data:image/png;base64,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'} id="item" name='tory_burch' />
         <SliderItem url={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIcAAAAOCAYAAAAFWA8aAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQ6SURBVHgB7VhLVtNQGP6TysMR7ICyAnDgOVAHhIHyGAU3YFmBsALKCigrADcgYSKoA8pA6jkOKDsIK7DOitJcvz/5b01DLnmgMul3Tpub3Nz/df/XjUUjjCBYWHXruPj8+3rq+RaNMAKwuOJuKYs6PLaJnPEeNZ/QCCMAlkXTyBRVDGeoT97NODk2jTCC4FefOiqgK2XTEn6dJ1xnbPEYFV0JHnSuFyhFc5j3A5vO2yeeFyeWulbRFQh0wcj79tnrJN/D71oECecXX7muZdN8Go04f6S8q4tT7zBNqbw69C06Ri1tJdZWMVcP3yNakrW+ljNOAxPTNlLvlxNvuwz/NBtq1FbdRpxPQR00/zQdfG235+vu/FhALuw7pfgV2DggajE9LiPqqdhBUWeo51hcdQ9x84bHIDbUi8TmGpjbNSi2E97YdvXiw/trMhgA6xumORON2prbhNZvWVEo8azV8rppNDJ0OMMDB062jQ1qGmRQMtxNk5NlZOO3T73lsvwxPMTcJhkQe483dVY/D51Y0RE2dB46NNsJB70jAwfoLS3rAB16Z8U9mrihTZMdNXKVFRikJcM6PQJUf8C/2psMs0xh6Ci0gmjzioA3hq/sMGFWewB/oF5bfz1DBcGRDCLHIS1FWyYacNx6uF+KpscqdKRl15DGczvLMRi5nMOWVAW8o0eAXRnw9+VXBpExxcB5IWVnR9+P31CDykHz75gyaxZ0yeDNv4/GRI82KLITy36mHWRxLXQML3S0HEg9rej6JxLN4Z+jddNU8/86+sE2ZIh6DhhERfwPUVJyeTwjTQc0WxvtT+k1Pw7myevD2qyQLWFQPVeGv2xqFYN92HArz3ruO4Z0kHJ1X1mMywiHWGbHIHGQF2uuh/7iPK9jMFKdI1lvpd5dQtgdMFguwqAUKvZePDLCptWig5+T5LDSefin6ODYNp1BBz9LBy4Bej2i7dqKnKsQkvw5akF3Dz3BHJxlM1MHRd0EjYY47B6uc1mBwvRrL90NqtAlbqvQmUzNsAm5ygozkg8kVQjXpP8Mjnbpvqu4HlAJSIfvU0EdOEpVohTVoi+JhaCjnZvNeJkqgpiz1BEomRkoqNDAecr0SoW/cyCCvyefBX8aVgqCYNa0FkYuHIGDtdJryIeaskSiI2KKDvchHnGcRRUVb2oFfiTGg3TQG164qS2KTOdgY6Be7YXHQDgBHOHOUVaiclcIHnBkOY47rddzSkdaPbq17q7NC9T+qBlGLWbamn4eaB14rUmHPDS40+fySiWB4NjnqyVOWkSHAQ07kl0JjX8JizeO8nlyK6tOSlfswIDz2Iip8KGiHwFK0mSPvLQamcF/iKf0PlsRWfLbH6NUnUcHHGG7/NUvqQNvEI7HLhUAMk83kU0cE/+k3mHvo4Qfn1ykyV8wlKokL/2u2Jjp+smDgt4HSoef/Ihmwm+7j0L8bdAiowAAAABJRU5ErkJggg=='} id="item" name='burberry' />
       </Slider>
-      <Link to="/Page11">
-        <button onClick={nextPage} ref={button} style={{ marginTop: '14px', cursor: ' pointer' }} className={classes.btn}>Continue</button>
+      <Link style={{textDecoration: 'none'}}to="/Page11">
+        <button onClick={nextPage} ref={button} style={{ marginTop: '14px',
+         cursor: ' pointer',
+        width: '181px',
+        height: '48px',
+        backgroundColor: '#DEDEDE',
+        borderRadius: '24px',
+        fontStyle: 'normal',
+        fontWeight: '700',
+        fontSize: '18px',
+        lineHeight: '25px',
+        color: '#FFFFFF',
+        border: 'none',
+        boxShadow: '0px 1px 4px 1px rgba(0, 0, 0, 0.1)',
+   }} className={classBtn}>Continue</button>
       </Link>
     </section>
   )

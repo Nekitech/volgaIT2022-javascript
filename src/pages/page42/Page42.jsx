@@ -5,6 +5,8 @@ import ButtonChoice from '../../components/UI/buttonChoice/ButtonChoice'
 import ButtonSkip from '../../components/UI/buttonSkip/ButtonSkip'
 import { UserAnswer, CounterContext, PageHistory } from '../../context'
 import { Link } from 'react-router-dom'
+import {css, StyleSheet} from 'aphrodite/no-important'
+
 function Page42() {
 const page = 'Page42'
 let [isShow, setisShow] = useState(false)
@@ -28,6 +30,17 @@ function nextPage(value, choiceAns = false, count = false) {
         window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, value)))
     }
     }
+
+    const styles = StyleSheet.create({
+        page :{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          boxSizing: 'border-box',
+          textDecoration: 'none',
+      }
+      })
 return (
 <div>
     {
@@ -36,25 +49,25 @@ return (
         (<BetweenPage text={"No worries, we've got you!"} />)
         :
         (
-        <section className='page'>
+        <section className={css(styles.page)}>
             <TitlePage style={{ marginBottom: '32px', width: '210px', textAlign: 'center' }} text={'How wide would you say your face is?'} />
             <div>
-                <Link to={'/' + choicePage}>
+                <Link style={{textDecoration: 'none'}}to={'/' + choicePage}>
                     <ButtonChoice onClick={() => {
                         nextPage({ 'frame_size': 66 }, true, true)
                     }} style={{ height: '84px', marginBottom: '11px' }} name={'Wider Than Average'} />
                 </Link>
-                <Link to={'/' + choicePage}>
+                <Link style={{textDecoration: 'none'}}to={'/' + choicePage}>
                     <ButtonChoice onClick={() => {
                         nextPage({ 'frame_size': 67 }, true, true)
                     }} style={{ height: '84px', marginBottom: '11px' }} name={'Average'} />
                 </Link>
-                <Link to={'/' + choicePage}>
+                <Link style={{textDecoration: 'none'}}to={'/' + choicePage}>
                     <ButtonChoice onClick={() => {
                         nextPage({ 'frame_size': 68 }, true, true)
                     }} style={{ height: '84px', marginBottom: '11px' }} name={'Narrower Than Average'} />
                 </Link>
-                <Link to={'/' + choicePage}>
+                <Link style={{textDecoration: 'none'}}to={'/' + choicePage}>
                     <ButtonSkip onClick={() => {
                         nextPage(null, false, true)
                     }} style={{ marginTop: '87px' }} text={"I'm not sure"} />

@@ -28,8 +28,8 @@ const ArrowPrev = (props) => {
   return (
     <div>
       {
-        <Link to={'/' + pages[pages.length - 1]}>
-          <img onClick={() => {
+        <Link style={{textDecoration: 'none'}}to={'/' + pages[pages.length - 1]}>
+          <img style={{cursor:'pointer'}} onClick={() => {
             if (pages[pages.length - 1] === 'Page41' && counter === 4) {
               prevPage()
             }

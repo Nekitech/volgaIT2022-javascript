@@ -4,6 +4,8 @@ import ButtonChoice from '../../components/UI/buttonChoice/ButtonChoice'
 import ButtonSkip from '../../components/UI/buttonSkip/ButtonSkip'
 import { CounterContext, PageHistory, UserAnswer } from '../../context'
 import { Link } from 'react-router-dom'
+import {css, StyleSheet} from 'aphrodite/no-important'
+
 function Page32() {
   const page = 'Page32'
   let { pages, setPages } = useContext(PageHistory)
@@ -20,28 +22,39 @@ function Page32() {
       window.sessionStorage.setItem('ans', JSON.stringify(Object.assign({}, ans, value)))
     }
   }
+
+  const styles = StyleSheet.create({
+    page :{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      boxSizing: 'border-box',
+      textDecoration: 'none',
+  }
+  })
   return (
-    <section className='page'>
+    <section className={css(styles.page)}>
       <TitlePage text={'What do you need your glasses for?'} />
-      <Link to='/Page41' >
+      <Link style={{textDecoration: 'none'}}to='/Page41' >
         <ButtonChoice style={{ height: '84px' }} onClick={() => {
           nextPage({ 'lenstype': 6 }, true)
         }} name={'Near Vision'} />
       </Link>
 
-      <Link to='/Page41' >
+      <Link style={{textDecoration: 'none'}}to='/Page41' >
         <ButtonChoice style={{ height: '84px' }} onClick={() => {
           nextPage({ 'lenstype': 6 }, true)
         }} name={'Distance Vision'} />
       </Link>
 
-      <Link to='/Page41' >
+      <Link style={{textDecoration: 'none'}}to='/Page41' >
         <ButtonChoice style={{ height: '84px' }} onClick={() => {
           nextPage({ 'lenstype': 7 }, true)
         }} name={'Multifocal / Progressive'} />
       </Link>
 
-      <Link to='/Page41' >
+      <Link style={{textDecoration: 'none'}}to='/Page41' >
         <ButtonSkip onClick={() => {
           nextPage()
         }} text={'Skip'} />

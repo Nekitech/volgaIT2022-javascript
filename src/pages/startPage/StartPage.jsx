@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../styles/App.css'
 import ButtonSwitched from '../../components/UI/buttonSwitched/ButtonSwitched'
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite/no-important';
 import {Link} from 'react-router-dom'
 const StartPage = (props) => {
  
@@ -12,7 +12,7 @@ const StartPage = (props) => {
         <h3 className={css(style.start_page__title)}>Let’s find your perfect pair!</h3>
         <p className={css(style.start_page__text)}>Take the quiz to easily discover your perfect fit from thousands of styles</p> 
         
-        <Link to="/Page1">
+        <Link style={{textDecoration: 'none'}}to="/Page1">
           <ButtonSwitched name="Следующая страница"></ButtonSwitched>   
         </Link>
       </section>

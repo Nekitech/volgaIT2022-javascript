@@ -20,7 +20,14 @@ function Main(){
     'brand': ''
 
   })
-  
+  const body = document.querySelector('body')
+  body.style.cssText = `
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Open Sans';
+    box-sizing: border-box;
+    text-decoration: none;
+  `
   console.log(pages, ' ---- ', counter)
   console.log(ans)
   return (
