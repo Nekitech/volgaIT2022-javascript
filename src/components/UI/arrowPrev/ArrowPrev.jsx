@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import classes from './ArrowPrev.module.css'
+// import classes from './ArrowPrev.module.css'
 import { Link } from 'react-router-dom';
 import { CounterContext, PageHistory, UserAnswer } from '../../../context'
 const ArrowPrev = (props) => {
@@ -67,7 +67,7 @@ const ArrowPrev = (props) => {
               prevPage()
             }
           }}
-            className={classes.arrow} src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxMSAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggaWQ9IkJhY2siIGQ9Ik05LjUgMUwxIDhMOS41IDE1IiBzdHJva2U9IiMzQTQ4NTAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=' alt="" />
+           src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxMSAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggaWQ9IkJhY2siIGQ9Ik05LjUgMUwxIDhMOS41IDE1IiBzdHJva2U9IiMzQTQ4NTAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=' alt="" />
         </Link>
       }
     </div>

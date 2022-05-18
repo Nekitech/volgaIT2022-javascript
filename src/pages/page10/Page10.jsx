@@ -85,6 +85,7 @@ function Page10() {
             selectBrand.push(sliderElem.getAttribute('name'))
           }
           (count > 0) ? button.current.style.cssText = `
+          cursor: pointer;
           width: 181px;
           height: 48px;
           backgroundColor: #DEDEDE;
@@ -98,6 +99,7 @@ function Page10() {
           boxShadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.1);
           background: linear-gradient(270deg, #45C7FA 0%, #2196F3 100%) !important;
           ` : button.current.style.cssText = `
+          cursor: pointer;
           height: 48px;
           backgroundColor: #DEDEDE;
           borderRadius: 24px;
@@ -143,7 +145,7 @@ function Page10() {
       </Slider>
       <Link style={{textDecoration: 'none'}}to="/Page11">
         <button onClick={nextPage} ref={button} style={{ marginTop: '14px',
-         cursor: ' pointer',
+         cursor: 'pointer',
         width: '181px',
         height: '48px',
         backgroundColor: '#DEDEDE',

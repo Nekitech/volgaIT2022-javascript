@@ -1,10 +1,38 @@
 import React from 'react'
 import classes from './SliderItem.module.css'
+import {css, StyleSheet} from 'aphrodite/no-important'
+
 function SliderItem(props) {
+  const styles = StyleSheet.create({
+    sliderItem: {
+      margin: "0 10px 8px 0",
+      color: "#000",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "column",
+      minWidth: "160px",
+      height: "103px",
+      cursor: "pointer",
+      backgroundColor: "#FFFFFF",
+      border: "1.96px solid rgba(231, 235, 237, 0.80141)",
+      boxShadow:
+        "0px 1px 0px rgba(58, 72, 80, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.08)",
+      borderRadius: "13.72px"
+    },
+    sliderItem_text: {
+      fontStyle: "normal",
+      fontWeight: '600',
+      fontSize: "13.72px",
+      lineHeight: "14px",
+      color: "#697580",
+      marginTop: "8px"
+    }
+  })
   return (
-    <div {...props} id={props.id} text={props.text} name={props.name} className={classes.sliderItem}>
-        <img className={classes.img} src={props.url} alt="" />
-        <p className={classes.sliderItem_text}>{props.text}</p>
+    <div {...props} id={props.id} text={props.text} name={props.name} className={css(styles.sliderItem)}>
+        <img src={props.url} alt="" />
+        <p className={css(styles.sliderItem_text)}>{props.text}</p>
         <img style={{
           top: '-5px',
           right: '-5px',

@@ -113,6 +113,7 @@ function Page8(props) {
           border: none;
           boxShadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.1);
           background: linear-gradient(270deg, #45C7FA 0%, #2196F3 100%) !important;
+          cursor: pointer;
           ` : button.current.style.cssText = `
           height: 48px;
           backgroundColor: #DEDEDE;
@@ -124,6 +125,7 @@ function Page8(props) {
           color: #FFFFFF;
           border: none;
           boxShadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
           `
         }
       }
@@ -159,7 +161,7 @@ function Page8(props) {
       </Slider>
       <Link style={{textDecoration: 'none'}}to="/Page9">
         <button onClick={nextPage} ref={button} style={{ marginTop: '14px',
-         cursor: ' pointer',
+         cursor: 'pointer',
         width: '181px',
         height: '48px',
         backgroundColor: '#DEDEDE',
