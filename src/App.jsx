@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-// import './styles/App.css'
+import React from 'react';
 import Header from './components/UI/Header/Header';
 import StartPage from './pages/startPage/StartPage';
 import Page1 from './pages/page1/Page1'; 
@@ -21,12 +20,11 @@ import Page10 from './pages/page10/Page10';
 import Page11 from './pages/page11/Page11';
 import {css, StyleSheet} from 'aphrodite/no-important'
 const App = () => {
-  
   return (
     <div className={css(styles.App)}>
         <Header/>
         <Routes>
-          <Route exact path="/" element={<StartPage/>}/>
+          <Route path="/" element={<StartPage/>}/>
           <Route path="/Page1" element={<Page1/>}/>
           <Route path="/Page2MenOrWoman" element={<Page2MenOrWoman/>}/>
           <Route path="/Page31" element={<Page31/>}/>

@@ -1,5 +1,4 @@
 import React, {useContext} from 'react'
-// import classes from './ArrowNext.module.css'
 import {Link}  from 'react-router-dom';
 import {CounterContext, PageHistory} from '../../../context'
 const ArrowNext = (props) => {

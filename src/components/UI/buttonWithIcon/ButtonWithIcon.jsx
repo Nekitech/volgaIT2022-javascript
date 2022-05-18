@@ -1,5 +1,4 @@
 import React from 'react'
-import classes from './ButtonWithIcon.module.css'
 import {css, StyleSheet} from 'aphrodite/no-important'
 
 function ButtonWithIcon(props) {

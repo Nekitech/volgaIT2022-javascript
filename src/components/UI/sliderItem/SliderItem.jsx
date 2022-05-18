@@ -1,5 +1,4 @@
 import React from 'react'
-import classes from './SliderItem.module.css'
 import {css, StyleSheet} from 'aphrodite/no-important'
 
 function SliderItem(props) {

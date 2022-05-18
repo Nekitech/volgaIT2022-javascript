@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../styles/App.css'
 import ButtonSwitched from '../../components/UI/buttonSwitched/ButtonSwitched'
 import { StyleSheet, css } from 'aphrodite/no-important';
 import {Link} from 'react-router-dom'

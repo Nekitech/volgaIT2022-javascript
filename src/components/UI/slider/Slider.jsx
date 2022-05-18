@@ -1,5 +1,4 @@
 import React, { useEffect, useState, Children, cloneElement } from 'react'
-import classes from './Slider.module.css'
 import { StyleSheet, css } from 'aphrodite/no-important';
 function Slider({ children }) {
   const [items, setItems] = useState([])

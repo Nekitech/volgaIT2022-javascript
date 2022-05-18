@@ -1,5 +1,4 @@
 import React from 'react'
-import classes from './ChoiceSizeButton.module.css'
 import {css, StyleSheet} from 'aphrodite/no-important'
 
 function ChoiceSizeButton(props) {

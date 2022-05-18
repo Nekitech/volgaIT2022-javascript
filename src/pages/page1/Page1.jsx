@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import ButtonChoice from '../../components/UI/buttonChoice/ButtonChoice'
 import ButtonSkip from '../../components/UI/buttonSkip/ButtonSkip'
-import '../../styles/App.css'
 import { Link } from 'react-router-dom'
 import { CounterContext, PageHistory, UserAnswer } from '../../context'
 import TitlePage from '../../components/UI/titlePage/TitlePage'

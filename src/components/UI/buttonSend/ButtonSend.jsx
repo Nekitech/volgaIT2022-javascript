@@ -1,5 +1,4 @@
 import React from 'react'
-import classes from './ButtonSend.module.css'
 import {css, StyleSheet} from 'aphrodite/no-important'
 
 function ButtonSend(props) {

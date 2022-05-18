@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-// import classes from './ArrowPrev.module.css'
 import { Link } from 'react-router-dom';
 import { CounterContext, PageHistory, UserAnswer } from '../../../context'
 const ArrowPrev = (props) => {

@@ -1,5 +1,4 @@
 import React, {useContext} from 'react'
-import classes from './ButtonSwitched.module.css'
 import {CounterContext, PageHistory} from '../../../context'
 import {css, StyleSheet} from 'aphrodite/no-important'
 

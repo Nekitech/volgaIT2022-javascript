@@ -1,5 +1,4 @@
 import React, {useContext} from 'react'
-import classes from './Page11.module.css'
 import Circle from '../../components/UI/circle/Circle'
 import ButtonSend from '../../components/UI/buttonSend/ButtonSend'
 import { UserAnswer } from '../../context'

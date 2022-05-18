@@ -1,5 +1,4 @@
 import React from 'react'
-import classes from './CounterBar.module.css'
 import {css, StyleSheet} from 'aphrodite/no-important'
 
 const styles = StyleSheet.create({

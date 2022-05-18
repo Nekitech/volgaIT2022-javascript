@@ -1,5 +1,4 @@
 import React from 'react'
-import classes from './ButtonChoice.module.css'
 import {css, StyleSheet} from 'aphrodite/no-important'
 const buttonChoice = (props) => {
   const styles = StyleSheet.create({

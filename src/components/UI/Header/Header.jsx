@@ -4,7 +4,6 @@ import ArrowPrev from '../arrowPrev/ArrowPrev'
 import CounterBar from '../counterBar/CounterBar'
 import CloseButton from '../closeButton/CloseButton'
 import { CounterContext, PageHistory, UserAnswer } from '../../../context'
-import classes from './Header.module.css'
 import {css, StyleSheet} from 'aphrodite'
 
 const Header = (props) => {

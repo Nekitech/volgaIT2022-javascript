@@ -4,7 +4,6 @@ import ButtonChoice from '../../components/UI/buttonChoice/ButtonChoice'
 import { CounterContext, PageHistory } from '../../context'
 import { Link } from 'react-router-dom'
 import {css, StyleSheet} from 'aphrodite/no-important'
-import style from 'radium/lib/components/style'
 
 function Page9() {
     const page = 'Page9'

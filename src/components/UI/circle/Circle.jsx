@@ -1,5 +1,4 @@
 import React from 'react'
-import classes from './Circle.module.css'
 import {css, StyleSheet} from 'aphrodite/no-important'
 
 function Circle(props) {

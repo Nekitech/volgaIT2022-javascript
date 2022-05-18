@@ -1,5 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
-import classes from './Page8.module.css'
+import React, { useContext, useRef } from 'react'
 import Slider from '../../components/UI/slider/Slider'
 import TitlePage from '../../components/UI/titlePage/TitlePage'
 import SliderItem from '../../components/UI/sliderItem/SliderItem'
