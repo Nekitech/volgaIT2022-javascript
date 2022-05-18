@@ -73,6 +73,8 @@ function Page10() {
             sliderElem.classList.remove('selected')
             sliderElem.style.cssText = `none`
             selectBrand.pop(sliderElem.getAttribute('name'))
+            sliderElem.childNodes[2].style.opacity = '0'
+
           }
           else {
             count += 1
@@ -83,6 +85,8 @@ function Page10() {
             `
             sliderElem.classList.add('selected')
             selectBrand.push(sliderElem.getAttribute('name'))
+            sliderElem.childNodes[2].style.opacity = '100%'
+
           }
           (count > 0) ? button.current.style.cssText = `
           cursor: pointer;

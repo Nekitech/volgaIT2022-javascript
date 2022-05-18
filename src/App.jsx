@@ -24,9 +24,9 @@ const App = () => {
   
   return (
     <div className={css(styles.App)}>
-      <Header/>
+        <Header/>
         <Routes>
-          <Route path="/" element={<StartPage/>}/>
+          <Route exact path="/" element={<StartPage/>}/>
           <Route path="/Page1" element={<Page1/>}/>
           <Route path="/Page2MenOrWoman" element={<Page2MenOrWoman/>}/>
           <Route path="/Page31" element={<Page31/>}/>

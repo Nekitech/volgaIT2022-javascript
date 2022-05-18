@@ -84,14 +84,14 @@ function Page8(props) {
         let sliderElem = (event.target?.getAttribute('id') === 'item') ? event.target : event.target?.closest('#item')
         if (sliderElem.getAttribute('id') === 'item') {
           if (sliderElem.classList.contains('selected')) {
-             count -=1 
+             count -= 1 
             sliderElem.classList.remove('selected')
             sliderElem.style.cssText = `none`
             selectGlass.pop(sliderElem.getAttribute('name'))
+            sliderElem.childNodes[2].style.opacity = '0'
           }
           else {
-            count +=1 
-
+            count += 1 
             sliderElem.style.cssText = `
             border: 1.96px solid #2196F3 !important;
             position: relative;
@@ -99,7 +99,9 @@ function Page8(props) {
             `
             sliderElem.classList.add('selected')
             selectGlass.push(sliderElem.getAttribute('name'))
+            sliderElem.childNodes[2].style.opacity = '100%'
           }
+
           (count > 0) ? button.current.style.cssText = `
           width: 181px;
           height: 48px;
