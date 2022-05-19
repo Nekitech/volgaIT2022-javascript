@@ -23,25 +23,27 @@ const App = () => {
   return (
     <div className={css(styles.App)}>
         <Header/>
-        <Routes>
-          <Route path="/" element={<StartPage/>}/>
-          <Route path="/Page1" element={<Page1/>}/>
-          <Route path="/Page2MenOrWoman" element={<Page2MenOrWoman/>}/>
-          <Route path="/Page31" element={<Page31/>}/>
-          <Route path="/Page32" element={<Page32/>}/>
-          <Route path="/Page41" element={<Page41/>}/>
-          <Route path="/Page42" element={<Page42/>}/>
-          <Route path="/SunglassesPage" element={<SunglassesPage/>}/>
-          <Route path="/EyeglassesPage" element={<EyeglassesPage/>}/>
-          <Route path="/Page6Both" element={<Page6Both/>}/>
-          <Route path="/Page6Men" element={<Page6Men/>}/>
-          <Route path="/Page6Women" element={<Page6Women/>}/>
-          <Route path="/Page7" element={<Page7/>}/>
-          <Route path="/Page8" element={<Page8/>}/>
-          <Route path="/Page9" element={<Page9/>}/>
-          <Route path="/Page10" element={<Page10/>}/>
-          <Route path="/Page11" element={<Page11/>}/>
-        </Routes>
+          
+            <Routes>
+              <Route exact path="/" element={<StartPage/>}/>
+              <Route path="/Page1" element={<Page1/>}/>
+              <Route path="/Page2MenOrWoman" element={<Page2MenOrWoman/>}/>
+              <Route path="/Page31" element={<Page31/>}/>
+              <Route path="/Page32" element={<Page32/>}/>
+              <Route path="/Page41" element={<Page41/>}/>
+              <Route path="/Page42" element={<Page42/>}/>
+              <Route path="/SunglassesPage" element={<SunglassesPage/>}/>
+              <Route path="/EyeglassesPage" element={<EyeglassesPage/>}/>
+              <Route path="/Page6Both" element={<Page6Both/>}/>
+              <Route path="/Page6Men" element={<Page6Men/>}/>
+              <Route path="/Page6Women" element={<Page6Women/>}/>
+              <Route path="/Page7" element={<Page7/>}/>
+              <Route path="/Page8" element={<Page8/>}/>
+              <Route path="/Page9" element={<Page9/>}/>
+              <Route path="/Page10" element={<Page10/>}/>
+              <Route path="/Page11" element={<Page11/>}/>
+            </Routes>
+          
     </div>
   );
 }

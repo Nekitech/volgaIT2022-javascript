@@ -1,8 +1,8 @@
 import React,  {useState} from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import {BrowserRouter} from 'react-router-dom'
 import {CounterContext, PageHistory, UserAnswer} from './context'
+import {BrowserRouter} from 'react-router-dom'
 
 function Main(){
   const [counter, setCounter] = useState(JSON.parse(window.sessionStorage.getItem('counter')) || 0)
@@ -32,6 +32,7 @@ function Main(){
   // console.log(ans)
   return (
     <BrowserRouter>
+    
       <CounterContext.Provider value={{counter, setCounter}}>
         <PageHistory.Provider value={{pages, setPages}}>
           <UserAnswer.Provider value={{ans, setAns}}>
@@ -39,13 +40,13 @@ function Main(){
           </UserAnswer.Provider>
         </PageHistory.Provider>
       </CounterContext.Provider> 
-      </BrowserRouter>
+      </BrowserRouter>  
   )
 }
 
 ReactDOM.render(
   <Main/>,
-  document.getElementById('root')
+  document.getElementById('glasses-quiz-widget')
 );
 
 
