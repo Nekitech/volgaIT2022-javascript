@@ -28,8 +28,6 @@ function Main(){
     box-sizing: border-box;
     text-decoration: none;
   `
-  // console.log(pages, ' ---- ', counter)
-  // console.log(ans)
   return (
     <BrowserRouter>
     

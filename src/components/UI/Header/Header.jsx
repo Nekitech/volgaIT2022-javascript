@@ -56,7 +56,6 @@ const Header = (props) => {
     },
     header__top: {
       display: "flex",
-      // padding: "11px 25px 14px 25px",
       alignItems: "center",
       justifyContent: "space-between",
     }

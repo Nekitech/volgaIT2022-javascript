@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link}  from 'react-router-dom';
-import {css, StyleSheet} from 'aphrodite/no-important'
 
 const CloseButton = (props) => {
   return (

@@ -50,8 +50,7 @@ const App = () => {
 const styles = StyleSheet.create({
   App:{
       position: 'relative',
-      maxWidth: '768px',
-      minWidth: '375px',
+      maxWidth: '375px',
       width: '100%',
       height: '638px',
       margin: '0 auto',
@@ -60,6 +59,9 @@ const styles = StyleSheet.create({
       textDecoration: 'none',
       fontFamily: 'Open Sans',
       boxSizing: 'border-box',
+      '@media (min-width: 375px)':{
+        maxWidth: '768px',
+      }
   },
 })
 export default App;
